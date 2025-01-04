@@ -434,7 +434,7 @@ const AosAnimation = dynamic(() => import('@/components/AOSAnimation'), {
 })
 
 const Coze = dynamic(() => import('@/components/Coze'), {
-  ssr: true
+  ssr: false
 })
 const LA51 = dynamic(() => import('@/components/LA51'), {
   ssr: false
