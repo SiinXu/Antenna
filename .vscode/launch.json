@@ -1,0 +1,10 @@
+{
+    "configurations": [
+        {
+            "type": "chrome",
+            "name": "http://cname.vercel-dns.com",
+            "request": "launch",
+            "url": "http://cname.vercel-dns.com"
+        }
+    ]
+}
