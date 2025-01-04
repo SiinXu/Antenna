@@ -386,7 +386,7 @@ const Fireworks = dynamic(() => import('@/components/Fireworks'), {
   ssr: false
 })
 const MouseFollow = dynamic(() => import('@/components/MouseFollow'), {
-  ssr: false
+  ssr: true
 })
 const Nest = dynamic(() => import('@/components/Nest'), { ssr: false })
 const FlutteringRibbon = dynamic(
@@ -406,7 +406,7 @@ const Analytics = dynamic(
     import('@vercel/analytics/react').then(async m => {
       return m.Analytics
     }),
-  { ssr: false }
+  { ssr: true }
 )
 const MusicPlayer = dynamic(() => import('@/components/Player'), { ssr: false })
 const Ackee = dynamic(() => import('@/components/Ackee'), { ssr: false })
@@ -421,20 +421,20 @@ const CustomContextMenu = dynamic(
   { ssr: false }
 )
 const DisableCopy = dynamic(() => import('@/components/DisableCopy'), {
-  ssr: false
+  ssr: true
 })
 const AdBlockDetect = dynamic(() => import('@/components/AdBlockDetect'), {
-  ssr: false
+  ssr: true
 })
 const LoadingProgress = dynamic(() => import('@/components/LoadingProgress'), {
-  ssr: false
+  ssr: true
 })
 const AosAnimation = dynamic(() => import('@/components/AOSAnimation'), {
   ssr: false
 })
 
 const Coze = dynamic(() => import('@/components/Coze'), {
-  ssr: false
+  ssr: true
 })
 const LA51 = dynamic(() => import('@/components/LA51'), {
   ssr: false
