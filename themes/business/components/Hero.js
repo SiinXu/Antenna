@@ -1,10 +1,13 @@
+'use client'
+
+import { motion } from 'framer-motion'
 import Link from 'next/link'
 import TypewriterEffectSmooth from './TypewriterEffectSmooth'
 import ShimmerButton from './ShimmerButton'
 import QuickStart from './QuickStart'
 import BLOG from '@/blog.config'
 
-const Hero = () => {
+export default function Hero() {
   const words = [
     {
       text: "Build",
@@ -25,30 +28,80 @@ const Hero = () => {
   ];
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-[90vh] bg-gradient-to-b from-transparent to-gray-100 dark:to-gray-900">
-      <div className="text-center space-y-12 max-w-4xl px-4">
+    <div className="relative min-h-screen overflow-hidden bg-gradient-to-br from-black via-gray-900 to-black">
+      {/* Animated background */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute inset-0 bg-[url('/grid.svg')] bg-center [mask-image:linear-gradient(to_bottom,white,transparent)]" />
+        <div className="absolute inset-0 bg-gradient-to-br from-rose-500/20 via-fuchsia-500/20 to-indigo-500/20 animate-pulse" />
+        <motion.div
+          className="absolute -inset-[10px] opacity-50"
+          style={{
+            backgroundImage: 'radial-gradient(circle at center, white 0.5px, transparent 0.5px)',
+            backgroundSize: '32px 32px',
+          }}
+          animate={{
+            backgroundPosition: ['0px 0px', '32px 32px'],
+          }}
+          transition={{
+            duration: 4,
+            repeat: Infinity,
+            ease: 'linear',
+          }}
+        />
+      </div>
+
+      {/* Content */}
+      <div className="relative mx-auto flex min-h-screen max-w-7xl flex-col items-center justify-center px-6 py-32 text-center">
+        <motion.h1
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="bg-gradient-to-r from-rose-100 via-fuchsia-100 to-indigo-100 bg-clip-text text-4xl font-bold tracking-tight text-transparent sm:text-6xl"
+        >
+          Your AI-Powered Marketing Growth Engine
+        </motion.h1>
+
         <TypewriterEffectSmooth words={words} />
-        <p className="text-lg md:text-xl text-gray-600 dark:text-gray-400">
+
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          className="mt-6 max-w-3xl text-lg leading-8 text-gray-300"
+        >
           {BLOG.DESCRIPTION}
-        </p>
-        <div className="flex flex-col md:flex-row gap-4 items-center justify-center">
+        </motion.p>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.4 }}
+          className="mt-10 flex items-center gap-6"
+        >
           <ShimmerButton>
-            <a href="#features" className="px-8">
+            <Link href="#features" className="px-8">
               Get Started
-            </a>
+            </Link>
           </ShimmerButton>
-          <a 
+          <Link 
             href={BLOG.CONTACT_URL || '#contact'} 
             className="px-8 py-3 rounded-full border border-gray-300 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-800 transition-all"
           >
             Contact Us
-          </a>
-        </div>
-        
+          </Link>
+        </motion.div>
+
         <QuickStart />
+
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.6 }}
+          className="mt-8 text-sm text-gray-400"
+        >
+          Trusted by over 1,000 businesses and individuals to enhance their marketing efficiency.
+        </motion.p>
       </div>
     </div>
   )
 }
-
-export default Hero
