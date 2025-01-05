@@ -2,7 +2,7 @@ import replaceSearchResult from '@/components/Mark'
 import { siteConfig } from '@/lib/config'
 import { useGlobal } from '@/lib/global'
 import algoliasearch from 'algoliasearch'
-import throttle from 'lodash/throttle'
+import throttle from 'lodash.throttle'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import {
