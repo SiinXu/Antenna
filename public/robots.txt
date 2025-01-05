@@ -4,9 +4,9 @@
     Allow: /
   
     # Host
-    Host: https://preview.tangly1024.com
+    Host: https://incidental.site
   
     # Sitemaps
-    Sitemap: https://preview.tangly1024.com/sitemap.xml
+    Sitemap: https://incidental.site/sitemap.xml
   
     
