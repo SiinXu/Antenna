@@ -1,18 +1,20 @@
 import React from 'react'
 import Link from 'next/link'
 import { CONFIG } from '../config'
+import styles from '../style.module.css'
+import animations from '../animations.module.css'
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-50 dark:bg-gray-900">
-      <div className="container mx-auto px-4 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+    <footer className={`${styles.footer} ${animations.fadeIn}`}>
+      <div className={styles.container}>
+        <div className={styles.footerGrid}>
           {/* Brand Section */}
-          <div>
-            <Link href="/" className="text-2xl font-bold text-blue-600 dark:text-blue-400">
+          <div className={`${styles.footerBrand} ${animations.slideInLeft}`}>
+            <Link href="/" className={`${styles.footerLogo} ${animations.linkHover}`}>
               {CONFIG.MODERN_LOGO || 'Modern Blog'}
             </Link>
-            <p className="mt-4 text-gray-600 dark:text-gray-400">
+            <p className={styles.footerDescription}>
               {CONFIG.MODERN_FOOTER_DESCRIPTION}
             </p>
             <div className="mt-6 flex space-x-4">
@@ -22,7 +24,7 @@ const Footer = () => {
                   href={social.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+                  className={`${styles.footerSocialLink} ${animations.hoverScale}`}
                 >
                   <span className="text-xl">{social.icon}</span>
                 </a>
@@ -32,16 +34,20 @@ const Footer = () => {
 
           {/* Links Sections */}
           {CONFIG.MODERN_FOOTER_LINKS.map((column, index) => (
-            <div key={index}>
-              <h3 className="text-lg font-semibold mb-4 text-gray-900 dark:text-white">
+            <div
+              key={index}
+              className={animations.fadeIn}
+              style={{ animationDelay: `${index * 0.1}s` }}
+            >
+              <h3 className={styles.footerTitle}>
                 {column.title}
               </h3>
-              <ul className="space-y-3">
+              <ul className={styles.footerLinks}>
                 {column.links.map((link, linkIndex) => (
-                  <li key={linkIndex}>
+                  <li key={linkIndex} className={styles.footerLink}>
                     <Link
                       href={link.url}
-                      className="text-gray-600 hover:text-blue-600 dark:text-gray-400 dark:hover:text-blue-400 transition-colors"
+                      className={animations.linkHover}
                     >
                       {link.text}
                     </Link>
@@ -52,10 +58,8 @@ const Footer = () => {
           ))}
         </div>
 
-        <div className="mt-12 pt-8 border-t border-gray-200 dark:border-gray-700">
-          <p className="text-center text-gray-600 dark:text-gray-400">
-            {new Date().getFullYear()} Modern Blog. All rights reserved.
-          </p>
+        <div className={`${styles.footerBottom} ${animations.fadeIn}`}>
+          {new Date().getFullYear()} Modern Blog. All rights reserved.
         </div>
       </div>
     </footer>
