@@ -1,4 +1,5 @@
 import { useEffect } from 'react'
+import MarketingHero from './components/MarketingHero'
 import Hero from './components/Hero'
 import Features from './components/Features'
 import Header from './components/Header'
@@ -25,8 +26,11 @@ const BusinessLayout = ({ children, layoutName, ...props }) => {
       
       {(!layoutName || layoutName === 'LayoutIndex') && (
         <>
-          <Hero {...props} />
-          <Features />
+          <MarketingHero />
+          <section className="h-[100vh]">
+            <Hero {...props} />
+            <Features />
+          </section>
         </>
       )}
       

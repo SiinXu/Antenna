@@ -3,12 +3,12 @@ import { motion, stagger, useAnimate } from "framer-motion";
 
 export default function TypewriterEffectSmooth({ words, className }) {
   const [scope, animate] = useAnimate();
-  let wordsArray = words.map((word) => {
+  let wordsArray = words?.map((word) => {
     return {
       ...word,
       text: word.text.split(""),
     };
-  });
+  }) || [];
 
   useEffect(() => {
     animate(
@@ -25,9 +25,9 @@ export default function TypewriterEffectSmooth({ words, className }) {
 
   const renderWords = () => {
     return (
-      <motion.div ref={scope} className="text-center">
+      <motion.div ref={scope} className="text-left">
         <div className="mt-4">
-          <div className="text-4xl md:text-6xl font-bold text-center">
+          <div className="text-2xl font-medium text-left text-zinc-500 dark:text-zinc-400">
             {wordsArray.map((word, idx) => {
               return (
                 <div key={`word-${idx}`} className="inline-block">

@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import TypewriterEffectSmooth from './TypewriterEffectSmooth'
-import { ShimmerButton } from './ShimmerButton'
+import ShimmerButton from './ShimmerButton'
 import QuickStart from './QuickStart'
 import BLOG from '@/blog.config'
 

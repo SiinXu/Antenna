@@ -1,53 +1,37 @@
-const BLOG = require('./blog.config')
-const { fontFamilies } = require('./lib/font')
-
+/** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    './pages/**/*.js',
-    './components/**/*.js',
-    './layouts/**/*.js',
-    './themes/**/*.js'
+    './pages/**/*.{js,ts,jsx,tsx,mdx}',
+    './components/**/*.{js,ts,jsx,tsx,mdx}',
+    './app/**/*.{js,ts,jsx,tsx,mdx}',
+    './themes/**/*.{js,ts,jsx,tsx,mdx}',
   ],
-  darkMode: BLOG.APPEARANCE === 'class' ? 'media' : 'class', // or 'media' or 'class'
+  darkMode: 'class',
   theme: {
-    fontFamily: fontFamilies,
-    screens: {
-      sm: '540px',
-      // => @media (min-width: 576px) { ... }
-      md: '720px',
-      // => @media (min-width: 768px) { ... }
-      lg: '960px',
-      // => @media (min-width: 992px) { ... }
-      xl: '1140px',
-      // => @media (min-width: 1200px) { ... }
-      '2xl': '1536px'
-    },
-    container: {
-      center: true,
-      padding: '16px'
-    },
     extend: {
       animation: {
         'gradient-x': 'gradient-x 15s ease infinite',
         'fade-in': 'fadeIn 1s ease-out',
         'blob': 'blob 7s infinite',
+        'shimmer': 'shimmer 2s linear infinite',
+        'meteor': 'meteor 5s linear infinite',
       },
       keyframes: {
         'gradient-x': {
           '0%, 100%': {
             'background-size': '200% 200%',
-            'background-position': 'left center'
+            'background-position': 'left center',
           },
           '50%': {
             'background-size': '200% 200%',
-            'background-position': 'right center'
+            'background-position': 'right center',
           },
         },
-        fadeIn: {
-          '0%': { opacity: '0', transform: 'translateY(10px)' },
-          '100%': { opacity: '1', transform: 'translateY(0)' },
+        'fadeIn': {
+          '0%': { opacity: '0' },
+          '100%': { opacity: '1' },
         },
-        blob: {
+        'blob': {
           '0%': {
             transform: 'translate(0px, 0px) scale(1)',
           },
@@ -61,62 +45,59 @@ module.exports = {
             transform: 'translate(0px, 0px) scale(1)',
           },
         },
+        'shimmer': {
+          from: {
+            backgroundPosition: '0 0',
+          },
+          to: {
+            backgroundPosition: '-200% 0',
+          },
+        },
+        'meteor': {
+          '0%': { transform: 'rotate(215deg) translateX(0)', opacity: '1' },
+          '70%': { opacity: '1' },
+          '100%': {
+            transform: 'rotate(215deg) translateX(-500px)',
+            opacity: '0',
+          },
+        },
       },
       colors: {
         day: {
-          DEFAULT: BLOG.BACKGROUND_LIGHT || '#ffffff'
+          50: '#FAFAFA',
+          100: '#F5F5F5',
+          200: '#E5E5E5',
+          300: '#D4D4D4',
+          400: '#A3A3A3',
+          500: '#737373',
+          600: '#525252',
+          700: '#404040',
+          800: '#262626',
+          900: '#171717',
+          950: '#0A0A0A',
         },
         night: {
-          DEFAULT: BLOG.BACKGROUND_DARK || '#111827'
+          50: '#E4E4E7',
+          100: '#D4D4D8',
+          200: '#A1A1AA',
+          300: '#71717A',
+          400: '#52525B',
+          500: '#3F3F46',
+          600: '#27272A',
+          700: '#18181B',
+          800: '#0F172A',
+          900: '#09090B',
+          950: '#030712',
         },
-        hexo: {
-          'background-gray': '#f5f5f5',
-          'black-gray': '#101414',
-          'light-gray': '#e5e5e5'
-        },
-        // black: '#212b36',
-        'dark-700': '#090e34b3',
-        dark: {
-          DEFAULT: '#111928',
-          2: '#1F2A37',
-          3: '#374151',
-          4: '#4B5563',
-          5: '#6B7280',
-          6: '#9CA3AF',
-          7: '#D1D5DB',
-          8: '#E5E7EB'
-        },
-        primary: '#3758F9',
-        'blue-dark': '#1B44C8',
-        secondary: '#13C296',
-        'body-color': '#637381',
-        'body-secondary': '#8899A8',
-        warning: '#FBBF24',
         stroke: '#DFE4EA',
         'gray-1': '#F9FAFB',
         'gray-2': '#F3F4F6',
-        'gray-7': '#CED4DA'
+        'gray-7': '#CED4DA',
       },
       maxWidth: {
         side: '14rem',
-        '9/10': '90%',
-        'screen-3xl': '1440px',
-        'screen-4xl': '1560px'
       },
-      boxShadow: {
-        input: '0px 7px 20px rgba(0, 0, 0, 0.03)',
-        form: '0px 1px 55px -11px rgba(0, 0, 0, 0.01)',
-        pricing: '0px 0px 40px 0px rgba(0, 0, 0, 0.08)',
-        'switch-1': '0px 0px 5px rgba(0, 0, 0, 0.15)',
-        testimonial: '0px 10px 20px 0px rgba(92, 115, 160, 0.07)',
-        'testimonial-btn': '0px 8px 15px 0px rgba(72, 72, 138, 0.08)',
-        1: '0px 1px 3px 0px rgba(166, 175, 195, 0.40)',
-        2: '0px 5px 12px 0px rgba(0, 0, 0, 0.10)'
-      }
-    }
+    },
   },
-  variants: {
-    extend: {}
-  },
-  plugins: []
+  plugins: [],
 }
