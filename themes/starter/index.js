@@ -521,7 +521,7 @@ const LayoutSignUp = props => {
   )
 }
 
-export {
+const Layouts = {
   Layout404,
   LayoutArchive,
   LayoutBase,
@@ -534,5 +534,6 @@ export {
   LayoutSignUp,
   LayoutSlug,
   LayoutTagIndex,
-  CONFIG as THEME_CONFIG
 }
+
+export default Layouts
