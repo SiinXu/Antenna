@@ -6,7 +6,7 @@ import CTA from './components/CTA'
 import Footer from './components/Footer'
 
 // 主页布局
-const LayoutIndex = ({ children, meta }) => {
+export const LayoutIndex = ({ children, meta }) => {
   return (
     <div className='min-h-screen flex flex-col'>
       <Nav />
@@ -22,7 +22,7 @@ const LayoutIndex = ({ children, meta }) => {
 }
 
 // 文章页布局
-const LayoutSlug = ({ children, meta }) => {
+export const LayoutSlug = ({ children, meta }) => {
   return (
     <div className='min-h-screen flex flex-col'>
       <Nav />
@@ -37,15 +37,14 @@ const LayoutSlug = ({ children, meta }) => {
 }
 
 // 其他页面布局复用文章页布局
-const LayoutPage = LayoutSlug
-const LayoutTag = LayoutSlug
-const LayoutSearch = LayoutSlug
-const LayoutArchive = LayoutSlug
-const Layout404 = LayoutSlug
-const LayoutCategoryIndex = LayoutSlug
+export const LayoutPage = LayoutSlug
+export const LayoutTag = LayoutSlug
+export const LayoutSearch = LayoutSlug
+export const LayoutArchive = LayoutSlug
+export const Layout404 = LayoutSlug
+export const LayoutCategoryIndex = LayoutSlug
 
-// 导出所有布局组件
-export {
+const Layouts = {
   LayoutIndex,
   LayoutSlug,
   LayoutPage,
@@ -56,14 +55,4 @@ export {
   LayoutCategoryIndex
 }
 
-// 默认导出
-export default {
-  LayoutIndex,
-  LayoutSlug,
-  LayoutPage,
-  LayoutTag,
-  LayoutSearch,
-  LayoutArchive,
-  Layout404,
-  LayoutCategoryIndex
-}
+export default Layouts
