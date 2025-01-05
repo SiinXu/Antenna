@@ -9,8 +9,8 @@ export const CONFIG = {
   MODERN_HERO_TITLE_2: '基于 Notion 的下一代博客平台，让创作更简单',
   MODERN_HERO_BUTTON_TEXT: '开始使用',
   MODERN_HERO_BUTTON_URL: '#features',
-  MODERN_HERO_BUTTON_ICON: '/images/modern/arrow-right.svg',
-  MODERN_HERO_IMAGE: '/images/modern/hero.webp',
+  MODERN_HERO_BUTTON_ICON: '',
+  MODERN_HERO_IMAGE: '',
 
   // Features Section
   MODERN_FEATURES_TITLE: '为什么选择我们',

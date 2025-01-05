@@ -4,13 +4,9 @@ const path = require('path')
 const BLOG = require('./blog.config')
 const { extractLangPrefix } = require('./lib/utils/pageId')
 
-// 打包时是否分析代码
-const withBundleAnalyzer = require('@next/bundle-analyzer')({
-  enabled: BLOG.BUNDLE_ANALYZER
-})
-
 // 扫描项目 /themes下的目录名
 const themes = scanSubdirectories(path.resolve(__dirname, 'themes'))
+
 // 检测用户开启的多语言
 const locales = (function () {
   // 根据BLOG_NOTION_PAGE_ID 检查支持多少种语言数据.
@@ -229,6 +225,4 @@ const nextConfig = {
   }
 }
 
-module.exports = process.env.ANALYZE
-  ? withBundleAnalyzer(nextConfig)
-  : nextConfig
+module.exports = nextConfig

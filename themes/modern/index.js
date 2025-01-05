@@ -4,16 +4,18 @@ import Hero from './components/Hero'
 import Features from './components/Features'
 import CTA from './components/CTA'
 import Footer from './components/Footer'
+import PostList from './components/PostList'
 
 // 主页布局
-const LayoutIndex = ({ children, meta }) => {
+const LayoutIndex = ({ posts }) => {
   return (
     <div className='min-h-screen flex flex-col'>
       <Nav />
       <Hero />
       <Features />
-      <main className='flex-1 container mx-auto px-4'>
-        {children}
+      {/* 文章列表区域 */}
+      <main className='flex-1 container mx-auto px-4 py-10'>
+        <PostList posts={posts} />
       </main>
       <CTA />
       <Footer />
