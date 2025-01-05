@@ -6,6 +6,24 @@ import dynamic from 'next/dynamic'
 export const { THEMES = [] } = getConfig().publicRuntimeConfig
 
 /**
+ * 获取基础布局组件
+ * @param {string} theme - 主题名称
+ * @returns {Component} React组件
+ */
+export const getBaseLayoutByTheme = (theme = BLOG.THEME) => {
+  return dynamic(() => import(`@/themes/${theme}`).then(mod => {
+    const Layout = mod.LayoutIndex || mod.default?.LayoutIndex
+    if (!Layout) {
+      throw new Error(`Layout not found in theme ${theme}`)
+    }
+    return Layout
+  }), {
+    loading: () => <div>Loading...</div>,
+    ssr: true
+  })
+}
+
+/**
  * 动态加载主题布局组件
  * @param {object} props - 组件属性
  * @returns {Component} React组件
@@ -74,61 +92,60 @@ export const getLayoutByTheme = ({ layoutName = 'LayoutIndex', theme = BLOG.THEM
   }
 }
 
-/**
- * 切换主题时的特殊处理
- */
+// 切换主题时的特殊处理
 export const fixThemeDOM = () => {
-  if (typeof window === 'undefined') return
-  const elements = document.getElementsByClassName('notion-collection-page-properties')
-  for (const element of elements) {
-    element.remove()
+  if (typeof window !== 'undefined') {
+    const elements = document.getElementsByClassName('notion-collection-card-cover')
+    for (const element of elements) {
+      element.style.maxHeight = 'none'
+    }
   }
 }
 
-/**
- * 初始化主题
- * @param {Function} updateDarkMode - 更改主题状态函数
- * @param {boolean} defaultDarkMode - 默认深色模式
- */
+// 初始化主题
 export const initDarkMode = (updateDarkMode, defaultDarkMode) => {
-  if (typeof window === 'undefined') return
-  
-  const darkMode = loadDarkModeFromLocalStorage()
-  const isDark = darkMode ?? defaultDarkMode ?? isPreferDark()
-  
-  updateDarkMode(isDark)
-  saveDarkModeToLocalStorage(isDark)
-  
-  if (isDark) {
-    document.documentElement.classList.add('dark')
+  if (typeof window !== 'undefined') {
+    const isDark = loadDarkModeFromLocalStorage()
+    if (isDark === null) {
+      const prefersDark = isPreferDark()
+      updateDarkMode(prefersDark)
+      saveDarkModeToLocalStorage(prefersDark)
+    } else {
+      updateDarkMode(isDark)
+      saveDarkModeToLocalStorage(isDark)
+    }
+
+    // 监听系统主题变化
+    const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)')
+    darkModeMediaQuery.addListener((e) => {
+      updateDarkMode(e.matches)
+      saveDarkModeToLocalStorage(e.matches)
+    })
+  } else {
+    updateDarkMode(defaultDarkMode)
   }
 }
 
-/**
- * 是否优先深色模式
- */
+// 是否优先深色模式
 export const isPreferDark = () => {
-  if (typeof window === 'undefined') return false
-  return (
-    window.matchMedia &&
-    window.matchMedia('(prefers-color-scheme: dark)').matches
-  )
+  if (typeof window !== 'undefined') {
+    return window.matchMedia('(prefers-color-scheme: dark)').matches
+  }
+  return false
 }
 
-/**
- * 读取深色模式
- */
+// 读取深色模式
 export const loadDarkModeFromLocalStorage = () => {
-  if (typeof window === 'undefined') return null
-  const value = localStorage.getItem('darkMode')
-  return value ? JSON.parse(value) : null
+  if (typeof window !== 'undefined') {
+    const value = localStorage.getItem('darkMode')
+    return value ? JSON.parse(value) : null
+  }
+  return null
 }
 
-/**
- * 保存深色模式
- * @param {boolean} darkMode - 深色模式状态
- */
+// 保存深色模式
 export const saveDarkModeToLocalStorage = (darkMode) => {
-  if (typeof window === 'undefined') return
-  localStorage.setItem('darkMode', JSON.stringify(darkMode))
+  if (typeof window !== 'undefined') {
+    localStorage.setItem('darkMode', JSON.stringify(darkMode))
+  }
 }
