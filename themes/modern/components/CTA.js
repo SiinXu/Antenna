@@ -1,6 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
-import CONFIG from '../config'
+import { CONFIG } from '../config'
 
 const CTA = () => {
   return (

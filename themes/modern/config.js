@@ -1,4 +1,4 @@
-const CONFIG = {
+export const CONFIG = {
   // 基础配置，继承自 NotionNext 配置
   MODERN_LOGO: '',
   MODERN_LOGO_WHITE: '',

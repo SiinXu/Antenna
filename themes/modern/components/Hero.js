@@ -1,7 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import CONFIG from '../config'
+import { CONFIG } from '../config'
 
 const Hero = () => {
   if (!CONFIG.MODERN_HERO_ENABLE) {

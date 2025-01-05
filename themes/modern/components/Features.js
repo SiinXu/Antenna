@@ -1,5 +1,5 @@
 import React from 'react'
-import CONFIG from '../config'
+import { CONFIG } from '../config'
 
 const Features = () => {
   return (

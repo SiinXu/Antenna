@@ -1,6 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
-import CONFIG from '../config'
+import { CONFIG } from '../config'
 
 const Footer = () => {
   return (
@@ -54,7 +54,7 @@ const Footer = () => {
 
         <div className="mt-12 pt-8 border-t border-gray-200 dark:border-gray-700">
           <p className="text-center text-gray-600 dark:text-gray-400">
-            © {new Date().getFullYear()} Modern Blog. All rights reserved.
+            {new Date().getFullYear()} Modern Blog. All rights reserved.
           </p>
         </div>
       </div>

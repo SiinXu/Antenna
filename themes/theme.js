@@ -6,6 +6,24 @@ import dynamic from 'next/dynamic'
 export const { THEMES = [] } = getConfig().publicRuntimeConfig
 
 /**
+ * 动态加载主题布局组件
+ * @param {object} props - 组件属性
+ * @returns {Component} React组件
+ */
+export const DynamicLayout = ({ theme, layout, ...props }) => {
+  const themeToUse = theme || BLOG.THEME
+  const LayoutComponent = dynamic(() => import(`@/themes/${themeToUse}`).then(mod => {
+    const Layout = mod[layout] || mod.LayoutIndex
+    return Layout
+  }), {
+    loading: () => <div>Loading...</div>,
+    ssr: true
+  })
+
+  return <LayoutComponent {...props} />
+}
+
+/**
  * 获取主题配置
  * @param {string} themeQuery - 主题查询参数（支持多个主题用逗号分隔）
  * @returns {Promise<object>} 主题配置对象
@@ -49,18 +67,10 @@ export const getThemeConfig = async themeQuery => {
  */
 export const getLayoutByTheme = ({ layoutName = 'LayoutIndex', theme = BLOG.THEME }) => {
   try {
-    return dynamic(() => import(`@/themes/${theme}`).then(mod => {
-      const Layout = mod.default[layoutName]
-      if (!Layout) {
-        throw new Error(`Layout ${layoutName} not found in theme ${theme}`)
-      }
-      return Layout
-    }), {
-      loading: () => <div>Loading...</div>
-    })
+    return import(`@/themes/${theme}`).then(mod => mod[layoutName] || mod.LayoutIndex)
   } catch (error) {
     console.error(`Error loading layout ${layoutName} for theme ${theme}:`, error)
-    return dynamic(() => import(`@/themes/${BLOG.THEME}`).then(mod => mod.default.LayoutIndex))
+    return import(`@/themes/${BLOG.THEME}`).then(mod => mod.LayoutIndex)
   }
 }
 
