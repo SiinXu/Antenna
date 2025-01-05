@@ -31,15 +31,17 @@ export const Hero = props => {
                 </p>
                 {/* 按钮组 */}
                 <ul className='mb-10 flex flex-wrap items-center justify-center gap-5'>
-                  {siteConfig('STARTER_HERO_BUTTON_1_TEXT', null, config) && (
-                    <li>
-                      <Link
-                        href={siteConfig('STARTER_HERO_BUTTON_1_URL', '')}
-                        className='inline-flex items-center justify-center rounded-md bg-white px-7 py-[14px] text-center text-base font-medium text-dark shadow-1 transition duration-300 ease-in-out hover:bg-gray-2 hover:text-body-color'>
-                        {siteConfig('STARTER_HERO_BUTTON_1_TEXT', null, config)}
-                      </Link>
-                    </li>
-                  )}
+                  {/* 
+                    {siteConfig('STARTER_HERO_BUTTON_1_TEXT', null, config) && (
+                      <li>
+                        <Link
+                          href={siteConfig('STARTER_HERO_BUTTON_1_URL', '')}
+                          className='inline-flex items-center justify-center rounded-md bg-white px-7 py-[14px] text-center text-base font-medium text-dark shadow-1 transition duration-300 ease-in-out hover:bg-gray-2 hover:text-body-color'>
+                          {siteConfig('STARTER_HERO_BUTTON_1_TEXT', null, config)}
+                        </Link>
+                      </li>
+                    )}
+                  */}
                   {siteConfig('STARTER_HERO_BUTTON_2_TEXT', null, config) && (
                     <li>
                       <Link
