@@ -38,7 +38,7 @@ export const DynamicLayout = ({ theme, layout, ...props }) => {
     ssr: true
   })
 
-  return <LayoutComponent {...props} />
+  return <LayoutComponent layoutName={layout} {...props} />
 }
 
 /**
