@@ -10,9 +10,12 @@ import useAdjustStyle from '@/hooks/useAdjustStyle'
 import { GlobalContextProvider } from '@/lib/global'
 import { getBaseLayoutByTheme } from '@/themes/theme'
 import { useRouter } from 'next/router'
-import { useCallback, useMemo } from 'react'
+import { useCallback, useMemo, useEffect } from 'react'
 import { getQueryParam } from '../lib/utils'
 import { ThemeProvider } from 'next-themes'
+import { LanguageProvider } from '@/lib/i18n/LanguageContext'
+import { I18nProvider } from '../lib/i18n/I18nProvider'
+import i18n from '../lib/i18n/i18n'
 
 // 各种扩展插件 这个要阻塞引入
 import BLOG from '@/blog.config'
@@ -45,33 +48,42 @@ const MyApp = ({ Component, pageProps }) => {
 
   // 整体布局
   const GLayout = useCallback(
-    props => {
+    ({ children }) => {
       const Layout = getBaseLayoutByTheme(theme)
-      return <Layout {...props} />
+      return <Layout {...pageProps}>{children}</Layout>
     },
-    [theme]
+    [pageProps, theme]
   )
 
   const enableClerk = process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY
-  const content = (
-    <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-      <GlobalContextProvider {...pageProps}>
-        <GLayout {...pageProps}>
-          <SEO {...pageProps} />
-          <Component {...pageProps} />
-        </GLayout>
-        <ExternalPlugins {...pageProps} />
-      </GlobalContextProvider>
-    </ThemeProvider>
-  )
+
+  useEffect(() => {
+    const urlParams = new URLSearchParams(window.location.search)
+    const langParam = urlParams.get('lang')
+    if (langParam && ['en', 'zh'].includes(langParam)) {
+      i18n.changeLanguage(langParam)
+    }
+  }, [])
+
   return (
-    <>
-      {enableClerk ? (
-        <ClerkProvider localization={zhCN}>{content}</ClerkProvider>
-      ) : (
-        content
-      )}
-    </>
+    <I18nProvider>
+      <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+        <LanguageProvider>
+          <GlobalContextProvider {...pageProps}>
+            <SEO {...pageProps} />
+            {enableClerk ? (
+              <ClerkProvider localization={zhCN} />
+            ) : (
+              <></>
+            )}
+            <GLayout>
+              <Component {...pageProps} />
+            </GLayout>
+            <ExternalPlugins {...pageProps} />
+          </GlobalContextProvider>
+        </LanguageProvider>
+      </ThemeProvider>
+    </I18nProvider>
   )
 }
 

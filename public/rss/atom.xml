@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id/>
+    <title>Notion Blog - EN</title>
+    <updated>2025-01-05T21:05:41.485Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <author>
+        <name>Incidental AI</name>
+        <uri>https://incidental.site</uri>
+    </author>
+    <link rel="alternate" href="https://incidental.site/"/>
+    <subtitle>NotionNext Blog</subtitle>
+    <icon>https://incidental.site/favicon.png</icon>
+    <rights>All rights reserved 2025, Incidental AI</rights>
+</feed>

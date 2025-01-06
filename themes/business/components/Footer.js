@@ -1,5 +1,7 @@
 'use client'
 
+import Link from 'next/link'
+import { useLanguage } from '@/lib/i18n/LanguageContext'
 import { motion } from 'framer-motion'
 
 const navigation = {
@@ -51,6 +53,8 @@ const navigation = {
 }
 
 export default function Footer() {
+  const { t } = useLanguage()
+
   return (
     <footer className="relative overflow-hidden bg-gradient-to-br from-black via-gray-900 to-black">
       {/* Animated background */}

@@ -1,0 +1,16 @@
+{
+  "marketInsights": {
+    "title": "In-Depth Market Insights",
+    "description": "Intelligently analyze market trends, competitive landscape, and customer needs, providing data-driven decision support to make your marketing strategies more precise and effective.",
+    "imageAlt": "Market Insights Demo"
+  },
+  "aiContent": {
+    "title": "AI Content Engine",
+    "description": "Unleash your creativity! Generate high-quality, platform-specific marketing content at scale, including articles, scripts, social media captions, images, and more."
+  },
+  "publishing": {
+    "title": "Smart Multi-Platform Publishing",
+    "description": "Say goodbye to tedious operations! Publish to major platforms with one click, scheduled posting, and multi-account management, significantly increasing your operational efficiency.",
+    "imageAlt": "Publishing System Demo"
+  }
+}

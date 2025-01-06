@@ -1,106 +1,108 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import Link from 'next/link'
+import { useLanguage } from '@/lib/i18n/LanguageContext'
 import TypewriterEffectSmooth from './TypewriterEffectSmooth'
-import ShimmerButton from './ShimmerButton'
-import QuickStart from './QuickStart'
-import BLOG from '@/blog.config'
 
 export default function Hero() {
+  const { t } = useLanguage()
+
   const words = [
     {
-      text: "Build",
+      text: t('hero.subtitle.build'),
+      className: 'text-white',
     },
     {
-      text: "awesome",
+      text: t('hero.subtitle.awesome'),
+      className: 'text-indigo-500 dark:text-indigo-500',
     },
     {
-      text: "apps",
+      text: t('hero.subtitle.apps'),
+      className: 'text-white',
     },
     {
-      text: "with",
+      text: t('hero.subtitle.with'),
+      className: 'text-white',
     },
     {
-      text: "Antenna.",
-      className: "text-blue-500 dark:text-blue-500",
+      text: t('hero.subtitle.antenna'),
+      className: 'text-purple-500 dark:text-purple-500',
     },
-  ];
+  ]
 
   return (
-    <div className="relative min-h-screen overflow-hidden bg-gradient-to-br from-black via-gray-900 to-black">
-      {/* Animated background */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute inset-0 bg-[url('/grid.svg')] bg-center [mask-image:linear-gradient(to_bottom,white,transparent)]" />
-        <div className="absolute inset-0 bg-gradient-to-br from-rose-500/20 via-fuchsia-500/20 to-indigo-500/20 animate-pulse" />
-        <motion.div
-          className="absolute -inset-[10px] opacity-50"
-          style={{
-            backgroundImage: 'radial-gradient(circle at center, white 0.5px, transparent 0.5px)',
-            backgroundSize: '32px 32px',
-          }}
-          animate={{
-            backgroundPosition: ['0px 0px', '32px 32px'],
-          }}
-          transition={{
-            duration: 4,
-            repeat: Infinity,
-            ease: 'linear',
-          }}
-        />
+    <div className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Background gradients */}
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(43,58,109,0.4),rgba(26,31,46,0.7))]" />
+      <div className="absolute inset-0 bg-noise opacity-[0.03]" />
+      
+      {/* Content */}
+      <div className="relative z-10 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full">
+        <div className="text-center">
+          {/* Main title with gradient */}
+          <motion.h1
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight bg-gradient-to-r from-white via-white to-neutral-400 bg-clip-text text-transparent pb-3"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            {t('hero.title')}
+          </motion.h1>
+
+          {/* Typewriter effect */}
+          <div className="my-8">
+            <TypewriterEffectSmooth words={words} />
+          </div>
+
+          {/* Description */}
+          <motion.p
+            className="mx-auto mt-6 max-w-2xl text-sm sm:text-base md:text-lg leading-8 text-neutral-300"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
+            {t('hero.description')}
+          </motion.p>
+
+          {/* Call to action buttons */}
+          <motion.div
+            className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+          >
+            <a
+              href="#"
+              className="rounded-full bg-indigo-500 px-6 py-3 text-sm sm:text-base font-semibold text-white shadow-sm hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500 transition duration-300"
+            >
+              {t('hero.getStarted')}
+            </a>
+            <a
+              href="#"
+              className="rounded-full bg-white/10 px-6 py-3 text-sm sm:text-base font-semibold text-white hover:bg-white/20 transition duration-300"
+            >
+              {t('hero.contactUs')}
+            </a>
+          </motion.div>
+
+          {/* Join us text */}
+          <motion.p
+            className="mt-8 text-xs sm:text-sm text-neutral-400"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.6 }}
+          >
+            {t('hero.joinUs')}
+          </motion.p>
+        </div>
       </div>
 
-      {/* Content */}
-      <div className="relative mx-auto flex min-h-screen max-w-7xl flex-col items-center justify-center px-6 py-32 text-center">
-        <motion.h1
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="bg-gradient-to-r from-rose-100 via-fuchsia-100 to-indigo-100 bg-clip-text text-4xl font-bold tracking-tight text-transparent sm:text-6xl"
-        >
-          Your AI-Powered Marketing Growth Engine
-        </motion.h1>
-
-        <TypewriterEffectSmooth words={words} />
-
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          className="mt-6 max-w-3xl text-lg leading-8 text-gray-300"
-        >
-          {BLOG.DESCRIPTION}
-        </motion.p>
-
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.4 }}
-          className="mt-10 flex items-center gap-6"
-        >
-          <ShimmerButton>
-            <Link href="#features" className="px-8">
-              Get Started
-            </Link>
-          </ShimmerButton>
-          <Link 
-            href={BLOG.CONTACT_URL || '#contact'} 
-            className="px-8 py-3 rounded-full border border-gray-300 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-800 transition-all"
-          >
-            Contact Us
-          </Link>
-        </motion.div>
-
-        <QuickStart />
-
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.6 }}
-          className="mt-8 text-sm text-gray-400"
-        >
-          Trusted by over 1,000 businesses and individuals to enhance their marketing efficiency.
-        </motion.p>
+      {/* Decorative elements */}
+      <div className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80">
+        <div className="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-indigo-500 to-purple-500 opacity-20 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]" />
+      </div>
+      <div className="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]">
+        <div className="relative left-[calc(50%+3rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 bg-gradient-to-tr from-purple-500 to-indigo-500 opacity-20 sm:left-[calc(50%+36rem)] sm:w-[72.1875rem]" />
       </div>
     </div>
   )

@@ -1,0 +1,11 @@
+{
+    "version": "https://jsonfeed.org/version/1",
+    "title": "Notion Blog - EN",
+    "home_page_url": "https://incidental.site/",
+    "description": "NotionNext Blog",
+    "author": {
+        "name": "Incidental AI",
+        "url": "https://incidental.site"
+    },
+    "items": []
+}

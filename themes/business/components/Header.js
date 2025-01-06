@@ -1,184 +1,153 @@
 'use client'
 
-import Link from 'next/link'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useTheme } from 'next-themes'
-import { cn } from '../utils'
-import { motion } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
+import { useLanguage } from '@/lib/i18n/LanguageContext'
+import Link from 'next/link'
+import LanguageSwitcher from '@/components/LanguageSwitcher'
 
-const navigation = [
-  { name: 'Blog', href: '/blog' },
-  { name: 'Docs', href: '/docs' },
-  { name: 'About', href: '/about' },
-]
-
-const Header = () => {
+export default function Header() {
+  const [mounted, setMounted] = useState(false)
   const [isOpen, setIsOpen] = useState(false)
-  const [hoveredIndex, setHoveredIndex] = useState(null)
   const { theme, setTheme } = useTheme()
+  const { t, locale, switchLanguage } = useLanguage()
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
+  const toggleMenu = () => {
+    setIsOpen(!isOpen)
+  }
+
+  const menuItems = [
+    { href: '#features', label: t('nav.features') },
+    { href: '#pricing', label: t('nav.pricing') },
+    { href: '#faq', label: t('nav.faq') },
+  ]
+
+  const toggleTheme = () => {
+    setTheme(theme === 'dark' ? 'light' : 'dark')
+  }
+
+  const toggleLanguage = () => {
+    switchLanguage(locale === 'en' ? 'zh' : 'en')
+  }
 
   return (
-    <motion.header
-      className="fixed left-0 right-0 top-0 z-50"
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      transition={{ duration: 0.5 }}
-    >
-      <div className="relative">
-        {/* Backdrop blur and gradient */}
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(43,58,109,0.4),rgba(26,31,46,0.7))] backdrop-blur-md" />
-        
-        {/* Noise texture */}
-        <div className="absolute inset-0 bg-noise opacity-[0.03]" />
-        
-        {/* Border gradient */}
-        <div className="absolute inset-x-0 -bottom-px h-px bg-gradient-to-r from-transparent via-indigo-500/30 to-transparent" />
-
-        {/* Content */}
-        <nav className="relative mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-          <div className="flex items-center gap-16">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-black/50 backdrop-blur-lg border-b border-white/10">
+      <nav className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="flex h-16 items-center justify-between">
+          {/* Logo */}
+          <div className="flex-shrink-0">
             <Link href="/" className="text-xl font-bold text-white">
               Antenna
             </Link>
-            <div className="hidden gap-8 md:flex">
-              {navigation.map((item, index) => (
-                <Link
-                  key={item.name}
-                  href={item.href}
-                  className="relative text-sm text-neutral-300 transition hover:text-white"
-                  onMouseEnter={() => setHoveredIndex(index)}
-                  onMouseLeave={() => setHoveredIndex(null)}
-                >
-                  {hoveredIndex === index && (
-                    <motion.span
-                      layoutId="navbar-hover"
-                      className="absolute -inset-x-3 -inset-y-2 -z-10 rounded-lg bg-white/5 backdrop-blur-sm"
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: 1 }}
-                      exit={{ opacity: 0 }}
-                    />
-                  )}
-                  {item.name}
-                </Link>
-              ))}
-            </div>
           </div>
-          <div className="flex items-center gap-4">
-            <button
-              onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-              className={cn(
-                'rounded-lg p-2 hover:bg-gray-100 dark:hover:bg-gray-800',
-                'text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white'
-              )}
-            >
-              {theme === 'dark' ? (
-                <svg
-                  className="h-5 w-5"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
-                  />
-                </svg>
-              ) : (
-                <svg
-                  className="h-5 w-5"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
-                  />
-                </svg>
-              )}
-            </button>
-            <a
-              href="https://github.com/antfu/antenna"
-              target="_blank"
-              rel="noreferrer"
-              className="rounded-lg p-2 text-gray-700 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-gray-800 dark:hover:text-white"
-            >
-              <svg
-                className="h-5 w-5"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
-                />
-              </svg>
-            </a>
-            <button
-              type="button"
-              className="md:hidden"
-              onClick={() => setIsOpen(!isOpen)}
-            >
-              <span className="sr-only">Open menu</span>
-              {isOpen ? (
-                <svg
-                  className="h-6 w-6 text-gray-700 dark:text-gray-300"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M6 18L18 6M6 6l12 12"
-                  />
-                </svg>
-              ) : (
-                <svg
-                  className="h-6 w-6 text-gray-700 dark:text-gray-300"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M4 6h16M4 12h16M4 18h16"
-                  />
-                </svg>
-              )}
-            </button>
-          </div>
-        </nav>
 
-        {/* Mobile menu */}
-        {isOpen && (
-          <div className="md:hidden">
-            <div className="space-y-1 bg-white px-2 pb-3 pt-2 dark:bg-night-800">
-              {navigation.map((item) => (
-                <Link
-                  key={item.name}
-                  href={item.href}
-                  className="block rounded-md px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-gray-800 dark:hover:text-white"
-                >
-                  {item.name}
-                </Link>
-              ))}
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex md:items-center md:space-x-8">
+            {menuItems.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="text-sm text-neutral-300 hover:text-white transition-colors"
+              >
+                {item.label}
+              </Link>
+            ))}
+          </div>
+
+          {/* Theme and Language Toggles - Desktop */}
+          <div className="hidden md:flex md:items-center md:space-x-4">
+            <button
+              onClick={toggleTheme}
+              className="p-2 text-neutral-300 hover:text-white transition-colors"
+              aria-label={t('nav.toggleTheme')}
+            >
+              {mounted && theme === 'dark' ? (
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" />
+                </svg>
+              ) : (
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z" />
+                </svg>
+              )}
+            </button>
+            <div className="text-neutral-300 hover:text-white transition-colors">
+              <LanguageSwitcher />
             </div>
           </div>
+
+          {/* Mobile menu button */}
+          <div className="md:hidden">
+            <button
+              onClick={toggleMenu}
+              className="inline-flex items-center justify-center p-2 text-neutral-300 hover:text-white transition-colors"
+              aria-expanded={isOpen}
+            >
+              <span className="sr-only">{t('nav.toggleMenu')}</span>
+              {isOpen ? (
+                <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              ) : (
+                <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                </svg>
+              )}
+            </button>
+          </div>
+        </div>
+      </nav>
+
+      {/* Mobile menu */}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: 'auto' }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.2 }}
+            className="md:hidden"
+          >
+            <div className="space-y-1 px-4 pb-3 pt-2">
+              {menuItems.map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className="block py-2 text-base text-neutral-300 hover:text-white transition-colors"
+                  onClick={() => setIsOpen(false)}
+                >
+                  {item.label}
+                </Link>
+              ))}
+              <div className="flex items-center space-x-4 py-2">
+                <button
+                  onClick={toggleTheme}
+                  className="p-2 text-neutral-300 hover:text-white transition-colors"
+                  aria-label={t('nav.toggleTheme')}
+                >
+                  {mounted && theme === 'dark' ? (
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" />
+                    </svg>
+                  ) : (
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z" />
+                    </svg>
+                  )}
+                </button>
+                <div className="text-neutral-300 hover:text-white transition-colors">
+                  <LanguageSwitcher />
+                </div>
+              </div>
+            </div>
+          </motion.div>
         )}
-      </div>
-    </motion.header>
+      </AnimatePresence>
+    </header>
   )
 }
-
-export default Header

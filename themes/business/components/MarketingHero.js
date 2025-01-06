@@ -8,6 +8,7 @@ import { BlogCard } from './BlogCard'
 import { FeaturesCard } from './FeaturesCard'
 import { MeteorsCard } from './MeteorsCard'
 import CONFIG from '../config'
+import { motion } from 'framer-motion'
 
 const meteors_data = {
   name: "Join our Discord",
@@ -41,9 +42,14 @@ const MarketingHero = () => {
             </Link>
 
             <div className="mt-6">
-              <h1 className="relative mb-6 max-w-4xl text-left text-4xl font-bold dark:text-zinc-100 sm:text-7xl md:text-7xl xl:text-7xl">
+              <motion.h1
+                className="relative mb-6 max-w-4xl text-left text-4xl font-bold dark:text-zinc-100 sm:text-7xl md:text-7xl xl:text-7xl"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+              >
                 {CONFIG.HERO.title}
-              </h1>
+              </motion.h1>
             </div>
 
             <div>
