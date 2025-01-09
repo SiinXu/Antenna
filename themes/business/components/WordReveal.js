@@ -3,19 +3,19 @@
 import { motion } from 'framer-motion'
 
 const words = [
-  "Intelligent",
-  "Efficient",
-  "Powerful",
-  "Automated",
-  "Scalable",
-  "Data-Driven"
+  "营销博客社区",
+  "AI 内容创作",
+  "智能用户运营",
+  "社交分享",
+  "灵感记录",
+  "一站式解决方案"
 ]
 
 export default function WordReveal() {
   return (
     <div className="flex flex-col pt-40">
       <div className="text-4xl font-bold text-zinc-800 dark:text-zinc-100">
-        Marketing Growth
+        触角赋能营销
       </div>
       <div className="relative h-16 overflow-hidden">
         <motion.div
@@ -42,4 +42,3 @@ export default function WordReveal() {
     </div>
   )
 }
-
