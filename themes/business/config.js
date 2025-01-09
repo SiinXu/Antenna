@@ -33,21 +33,21 @@ const CONFIG = {
     }
   },
   HERO: {
-    introducing: "Introducing Antenna",
-    title: "Antenna: A new way to build your blog",
-    subTitle: "Your complete All-in-One solution for building blog services.",
+    introducing: "欢迎使用 Antenna 触角",
+    title: "AI 赋能营销，开启内容创作与用户运营新纪元",
+    subTitle: "专为营销人员和内容创作者打造的 AI 智能工具",
     typewriterWords: [
       {
-        text: "Build",
+        text: "高效",
       },
       {
-        text: "awesome",
+        text: "智能",
       },
       {
-        text: "blogs",
+        text: "创作",
       },
       {
-        text: "with",
+        text: "尽在",
       },
       {
         text: "Antenna.",
@@ -56,47 +56,43 @@ const CONFIG = {
     ],
     buttons: [
       {
-        text: "Get Started",
+        text: "立即体验",
         href: "#features",
         type: "primary"
       },
-      {
-        text: "View on GitHub",
-        href: "https://github.com/once-ui-system/nextjs-starter.git",
-        type: "secondary"
-      }
     ]
   },
   FEATURES: {
-    title: "Amazing Features",
-    description: "Everything you need to build amazing blogs",
+    title: "核心功能",
+    description: "五大核心功能模块，助力营销创新",
     items: [
       {
-        title: "Modern Design",
-        description: "Clean and modern interface that puts your content first",
-        icon: "🎨"
+        title: "营销博客社区",
+        description: "汇集优质营销原理方案和成功案例，打造你的专属营销智库。无论你是营销新手还是资深专家，都能在这里找到灵感和解决方案。",
+        icon: "🌐"
       },
       {
-        title: "Fast Performance",
-        description: "Built with Next.js and optimized for speed",
-        icon: "⚡"
+        title: "AI 内容创作",
+        description: "采用先进的 RAG 技术，深度理解你的需求，为你量身打造极具吸引力的营销文案。支持多种类型文案生成，包括邮件、文章、策划等。",
+        icon: "🤖"
       },
       {
-        title: "SEO Friendly",
-        description: "Optimized for search engines out of the box",
-        icon: "🔍"
+        title: "智能用户运营",
+        description: "具备情绪分析能力，智能生成贴心回复。支持文档一键转 FAQ，提升用户体验。让用户运营更智能、更高效。",
+        icon: "📊"
       },
       {
-        title: "Dark Mode",
-        description: "Built-in dark mode support for better viewing",
-        icon: "🌙"
+        title: "社交分享",
+        description: "支持生成高度自定义的社交卡片和个人电子名片，让你在社交媒体上脱颖而出，提升品牌形象和影响力。",
+        icon: "🔗"
       }
     ]
   },
   QUICK_START: {
-    title: "Quick start",
-    code: "git clone https://github.com/once-ui-system/nextjs-starter.git",
-    language: "tsx"
+    title: "开始使用",
+    description: "立即体验 Antenna 触角，开启营销新纪元",
+    code: "npm install @antenna/marketing-suite",
+    language: "bash"
   }
 }
 

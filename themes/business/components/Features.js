@@ -30,30 +30,40 @@ const FeatureCard = ({ feature, index }) => {
   );
 };
 
-const Features = () => {
-  const features = [
-    {
-      title: 'Modern Design',
-      description: 'Clean and modern interface that puts your content first',
-      icon: '🎨'
-    },
-    {
-      title: 'Fast Performance',
-      description: 'Built with Next.js and optimized for speed',
-      icon: '⚡'
-    },
-    {
-      title: 'SEO Friendly',
-      description: 'Optimized for search engines out of the box',
-      icon: '🔍'
-    },
-    {
-      title: 'Dark Mode',
-      description: 'Built-in dark mode support for better viewing',
-      icon: '🌙'
-    }
-  ]
+const features = [
+  {
+    title: '营销博客社区',
+    description: '汇集大量优质的营销原理方案和成功案例，无论你是营销新手还是资深专家，都能在这里找到灵感和解决方案，提升你的营销技能和策略水平。',
+    icon: '📚'
+  },
+  {
+    title: 'AI 内容创作',
+    description: '采用先进的 RAG 技术，深入理解你的需求，为你量身打造极具吸引力的营销文案。支持多种类型的内容创作，包括邮件、文章、策划、贴文等。',
+    icon: '✨'
+  },
+  {
+    title: '智能用户运营',
+    description: '具备先进的情绪分析能力，能够深入理解用户情绪，智能生成贴心的回复。支持文档一键转 FAQ，提升用户体验。',
+    icon: '👥'
+  },
+  {
+    title: '社交分享',
+    description: '支持生成高度自定义的社交卡片，让你的分享内容在社交媒体上脱颖而出。创建专属的个人电子名片，打造专业形象。',
+    icon: '🔄'
+  },
+  {
+    title: '灵感记录',
+    description: '随时进行实时语音对话，展开头脑风暴，捕捉灵感火花。对话内容实时展示，关键点自动记录，并提供情绪分析。',
+    icon: '💡'
+  },
+  {
+    title: '持续进化',
+    description: '不断学习最新的营销理论和实践，持续优化功能和性能，始终保持领先。为你提供一站式的智能营销解决方案。',
+    icon: '🔄'
+  }
+]
 
+const Features = () => {
   return (
     <section id="features" className="py-20 bg-white dark:bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">

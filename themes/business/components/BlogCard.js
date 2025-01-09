@@ -4,7 +4,7 @@ import { FollowerPointerCard } from "./ui/following-pointer"
 
 export function BlogCard() {
   return (
-    <div className="w-80">
+    <div className="w-full sm:w-[340px] md:w-[360px] lg:w-[380px] xl:w-[400px]">
       <FollowerPointerCard
         title={
           <TitleComponent
@@ -14,23 +14,23 @@ export function BlogCard() {
         }
       >
         <div className="group relative h-full overflow-hidden rounded-2xl border border-zinc-100 bg-white transition duration-200 hover:shadow-xl dark:border-zinc-800 dark:bg-zinc-900">
-          <div className="aspect-w-16 aspect-h-10 xl:aspect-w-16 xl:aspect-h-10 relative w-full overflow-hidden rounded-tl-lg rounded-tr-lg bg-gray-100">
+          <div className="aspect-w-16 aspect-h-10 relative w-full overflow-hidden rounded-tl-lg rounded-tr-lg bg-gray-100">
             <img
               src={blogContent.image}
               alt="thumbnail"
-              className={`transform object-cover transition duration-200 group-hover:scale-95 group-hover:rounded-2xl`}
+              className="transform object-cover transition duration-200 group-hover:scale-95 group-hover:rounded-2xl"
             />
           </div>
-          <div className="p-4">
-            <h2 className="my-4 text-lg font-bold text-zinc-700 dark:text-zinc-300">
+          <div className="p-3 sm:p-4 md:p-5">
+            <h2 className="my-2 sm:my-3 md:my-4 text-base sm:text-lg font-bold text-zinc-700 dark:text-zinc-300">
               {blogContent.title}
             </h2>
-            <h2 className="my-4 text-sm font-normal text-zinc-500 dark:text-zinc-400">
+            <h2 className="my-2 sm:my-3 md:my-4 text-xs sm:text-sm font-normal text-zinc-500 dark:text-zinc-400">
               {blogContent.description}
             </h2>
-            <div className="mt-10 flex flex-row items-center justify-between">
-              <span className="text-sm text-gray-500">{blogContent.date}</span>
-              <div className="relative z-10 block rounded-xl bg-black px-6 py-2 text-xs font-bold text-white">
+            <div className="mt-4 sm:mt-6 md:mt-8 lg:mt-10 flex flex-row items-center justify-between">
+              <span className="text-xs sm:text-sm text-gray-500">{blogContent.date}</span>
+              <div className="relative z-10 block rounded-xl bg-black px-4 sm:px-6 py-1.5 sm:py-2 text-xs font-bold text-white hover:bg-zinc-800 transition-colors">
                 Read More
               </div>
             </div>

@@ -30,24 +30,24 @@ const DocumentGuide = ({ children }) => {
 
 const MarketingHero = () => {
   return (
-    <section className="w-full px-8 sm:px-48 md:px-48 xl:h-[100vh] xl:px-48">
-      <div className="grid grid-cols-1 gap-10 pb-10 md:pb-40 xl:grid-cols-2">
+    <section className="w-full px-4 py-8 sm:px-6 md:px-8 lg:px-12 xl:h-[100vh] xl:px-24 2xl:px-48">
+      <div className="grid grid-cols-1 gap-6 md:gap-8 lg:gap-10 pb-8 md:pb-16 lg:pb-24 xl:grid-cols-2">
         <div className="flex flex-col items-start">
-          <div className="flex flex-col pt-4 md:pt-28 lg:pt-28 xl:pt-28">
+          <div className="flex flex-col pt-4 md:pt-16 lg:pt-20 xl:pt-28">
             <Link href="https://document.saasfly.io" target="_blank">
               <DocumentGuide>
                 {CONFIG.HERO.introducing}
               </DocumentGuide>
             </Link>
 
-            <div className="mt-6">
-              <h1 className="relative mb-6 max-w-4xl text-left text-4xl font-bold dark:text-zinc-100 sm:text-7xl md:text-7xl xl:text-7xl">
+            <div className="mt-4 md:mt-6">
+              <h1 className="relative mb-4 md:mb-6 max-w-4xl text-left text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-bold dark:text-zinc-100">
                 {CONFIG.HERO.title}
               </h1>
             </div>
 
             <div>
-              <span className="text-zinc-500 sm:text-xl">
+              <span className="text-base md:text-lg lg:text-xl text-zinc-500">
                 {CONFIG.HERO.subTitle}
               </span>
               <TypewriterEffectSmooth words={CONFIG.HERO.typewriterWords} />
