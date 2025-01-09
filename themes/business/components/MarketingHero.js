@@ -10,11 +10,11 @@ import { MeteorsCard } from './MeteorsCard'
 import CONFIG from '../config'
 
 const meteors_data = {
-  name: "Join our Discord",
+  name: "加入博客社区",
   description:
-    "Join our Discord server to chat with other developers and get help.",
-  button_content: "Chat with us",
-  url: "https://discord.gg/8SwSX43wnD",
+    "加入我们的博客社区发现更多专业营销内容！",
+  button_content: "Go",
+  url: "/?theme=hexo",
 }
 
 const DocumentGuide = ({ children }) => {
@@ -34,7 +34,7 @@ const MarketingHero = () => {
       <div className="grid grid-cols-1 gap-6 md:gap-8 lg:gap-10 pb-8 md:pb-16 lg:pb-24 xl:grid-cols-2">
         <div className="flex flex-col items-start">
           <div className="flex flex-col pt-4 md:pt-16 lg:pt-20 xl:pt-28">
-            <Link href="https://document.saasfly.io" target="_blank">
+            <Link href="/?theme=landing" target="_blank">
               <DocumentGuide>
                 {CONFIG.HERO.introducing}
               </DocumentGuide>

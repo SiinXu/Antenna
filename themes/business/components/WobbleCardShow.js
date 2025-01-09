@@ -79,7 +79,7 @@ export default function WobbleCardShow() {
           AI 内容创作
         </h2>
         <p className="mt-4 max-w-[26rem] text-left text-base/6 text-white/80">
-          触角采用先进的 RAG（检索增强生成）技术，能够深入理解你的需求，为你量身打造极具吸引力的营销文案，支持多种类型的内容创作，包括邮件、文章、策划、贴文、短视频脚本等。
+          触角采用先进的 RAG 技术，能够深入理解你的需求，为你量身打造极具吸引力的营销文案，支持多种类型的内容创作，包括邮件、文章、策划、贴文、短视频脚本等。
         </p>
       </WobbleCard>
 
@@ -93,7 +93,7 @@ export default function WobbleCardShow() {
           </p>
         </div>
         <img
-          src="/multi-platform.webp"
+          src="/market-insights.webp"
           width={500}
           height={500}
           alt="智能用户运营"

@@ -86,9 +86,10 @@ const BusinessLayout = ({ children, layoutName, ...props }) => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
+            className="flex justify-center"
           >
             <TiltFx>
-              <div className="w-full max-w-4xl rounded-lg bg-white p-8 shadow-lg transition-all duration-300 hover:shadow-xl dark:bg-zinc-800">
+              <div className="w-full max-w-4xl mx-auto rounded-lg bg-white p-8 shadow-lg transition-all duration-300 hover:shadow-xl dark:bg-zinc-800">
                 <QuickStart />
               </div>
             </TiltFx>
@@ -100,13 +101,11 @@ const BusinessLayout = ({ children, layoutName, ...props }) => {
           <div className="flex h-full w-full flex-col items-center pb-[100px] pt-10">
             <div>
               <h1 className="mb-6 text-center text-3xl font-bold text-zinc-800 dark:text-zinc-100 md:text-5xl">
-                What People Are Saying
+                用户真实评价
               </h1>
             </div>
             <div className="mb-6 text-xl text-zinc-800 dark:text-zinc-100 md:text-xl">
-              Don't just take our word for it. Here's what{" "}
-              <span className="font-bold">real people</span> are saying about
-              Antenna.
+              不要只听我们说，来看看<span className="font-bold">真实用户</span>是如何评价 Antenna 的
             </div>
 
             <div className="w-full overflow-x-hidden">

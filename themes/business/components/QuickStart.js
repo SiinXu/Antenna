@@ -135,7 +135,7 @@ const QuickStart = () => {
           transition={{ duration: 0.5, delay: 0.2 }}
           className="bg-gradient-to-r from-neutral-100 to-neutral-300 bg-clip-text text-3xl font-bold text-transparent"
         >
-          Quick Start Guide
+          快速开始使用
         </motion.h2>
         <motion.p
           initial={{ opacity: 0, y: 20 }}
@@ -143,7 +143,7 @@ const QuickStart = () => {
           transition={{ duration: 0.5, delay: 0.3 }}
           className="mt-4 max-w-2xl text-neutral-300"
         >
-          Get started with Antenna in minutes. Follow these simple steps to set up your marketing automation.
+          只需几分钟，即可开始使用触角。按照以下简单步骤，开启你的智能营销之旅。
         </motion.p>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -152,27 +152,27 @@ const QuickStart = () => {
           className="mt-8 grid gap-6 md:grid-cols-2"
         >
           <div className="rounded-2xl bg-white/5 p-6 backdrop-blur-sm">
-            <h3 className="text-lg font-semibold text-white">1. Connect Your Accounts</h3>
+            <h3 className="text-lg font-semibold text-white">1. 加入营销社区</h3>
             <p className="mt-2 text-neutral-300">
-              Link your social media and marketing platforms to Antenna for seamless integration.
+              注册账号并加入触角的营销博客社区，获取海量优质的营销原理方案和成功案例。
             </p>
           </div>
           <div className="rounded-2xl bg-white/5 p-6 backdrop-blur-sm">
-            <h3 className="text-lg font-semibold text-white">2. Set Up Your Profile</h3>
+            <h3 className="text-lg font-semibold text-white">2. 设置个性化偏好</h3>
             <p className="mt-2 text-neutral-300">
-              Configure your brand voice, target audience, and marketing preferences.
+              配置你的品牌调性、目标用户、营销偏好，让触角更好地理解你的需求。
             </p>
           </div>
           <div className="rounded-2xl bg-white/5 p-6 backdrop-blur-sm">
-            <h3 className="text-lg font-semibold text-white">3. Create Your First Campaign</h3>
+            <h3 className="text-lg font-semibold text-white">3. 开始内容创作</h3>
             <p className="mt-2 text-neutral-300">
-              Use our AI to generate content and schedule your first marketing campaign.
+              使用 RAG 技术驱动的 AI 创作引擎，生成高质量的营销文案，包括邮件、文章、策划等多种形式。
             </p>
           </div>
           <div className="rounded-2xl bg-white/5 p-6 backdrop-blur-sm">
-            <h3 className="text-lg font-semibold text-white">4. Monitor & Optimize</h3>
+            <h3 className="text-lg font-semibold text-white">4. 智能用户运营</h3>
             <p className="mt-2 text-neutral-300">
-              Track your performance and let our AI optimize your marketing strategy.
+              利用情绪分析和智能回复功能，提升用户体验，让你的运营更加高效。
             </p>
           </div>
         </motion.div>

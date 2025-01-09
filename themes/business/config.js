@@ -1,8 +1,8 @@
 const CONFIG = {
   name: 'business',
-  title: 'Business Theme',
-  description: 'A professional business theme for your website',
-  author: 'Antenna',
+  title: 'Antenna 触角',
+  description: 'AI 赋能营销，开启内容创作与用户运营新纪元',
+  author: 'Antenna 触角团队',
   github: '',
   version: '1.0.0',
   features: {
@@ -38,19 +38,19 @@ const CONFIG = {
     subTitle: "专为营销人员和内容创作者打造的 AI 智能工具",
     typewriterWords: [
       {
-        text: "高效",
+        text: "营销博客社区",
       },
       {
-        text: "智能",
+        text: "AI 内容创作",
       },
       {
-        text: "创作",
+        text: "智能用户运营",
       },
       {
-        text: "尽在",
+        text: "社交分享",
       },
       {
-        text: "Antenna.",
+        text: "灵感记录",
         className: "text-blue-500 dark:text-blue-500",
       },
     ],
@@ -68,18 +68,18 @@ const CONFIG = {
     items: [
       {
         title: "营销博客社区",
-        description: "汇集优质营销原理方案和成功案例，打造你的专属营销智库。无论你是营销新手还是资深专家，都能在这里找到灵感和解决方案。",
-        icon: "🌐"
+        description: "触角拥有一个庞大且持续更新的营销博客社区，汇集了大量优质的营销原理方案和成功案例。无论你是营销新手还是资深专家，都能在这里找到灵感和解决方案。",
+        icon: "📚"
       },
       {
         title: "AI 内容创作",
-        description: "采用先进的 RAG 技术，深度理解你的需求，为你量身打造极具吸引力的营销文案。支持多种类型文案生成，包括邮件、文章、策划等。",
-        icon: "🤖"
+        description: "采用先进的 RAG 技术，深入理解你的需求，为你量身打造极具吸引力的营销文案。支持多种类型的营销文案，包括邮件、文章、策划、贴文、短视频脚本等。",
+        icon: "✨"
       },
       {
         title: "智能用户运营",
-        description: "具备情绪分析能力，智能生成贴心回复。支持文档一键转 FAQ，提升用户体验。让用户运营更智能、更高效。",
-        icon: "📊"
+        description: "具备先进的情绪分析能力，能够深入理解用户文字背后的情绪，智能生成贴心、人性化的回复。支持文档一键转 FAQ，方便用户快速获取所需信息。",
+        icon: "👥"
       },
       {
         title: "社交分享",
@@ -89,8 +89,8 @@ const CONFIG = {
     ]
   },
   QUICK_START: {
-    title: "开始使用",
-    description: "立即体验 Antenna 触角，开启营销新纪元",
+    title: "立即开始",
+    description: "立即体验 Antenna 触角，开启你的营销新篇章！",
     code: "npm install @antenna/marketing-suite",
     language: "bash"
   }
