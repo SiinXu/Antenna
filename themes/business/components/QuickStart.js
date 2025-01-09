@@ -154,7 +154,7 @@ const QuickStart = () => {
           <div className="rounded-2xl bg-white/5 p-6 backdrop-blur-sm">
             <h3 className="text-lg font-semibold text-white">1. 加入营销社区</h3>
             <p className="mt-2 text-neutral-300">
-              注册账号并加入触角的营销博客社区，获取海量优质的营销原理方案和成功案例。
+              加入触角的营销博客社区，获取海量优质的营销原理方案和成功案例。
             </p>
           </div>
           <div className="rounded-2xl bg-white/5 p-6 backdrop-blur-sm">
