@@ -15,7 +15,13 @@ import Pricing from './components/Pricing'
 import CONFIG from './config'
 
 const BusinessLayout = ({ children, layoutName, ...props }) => {
-  const { theme } = useTheme()
+  const { theme, setTheme } = useTheme()
+  useEffect(() => {
+    // 设置默认深色主题
+    document.documentElement.classList.add('dark')
+    setTheme('dark')
+  }, [])
+
   useEffect(() => {
     if (theme === 'dark') {
       document.documentElement.classList.add('dark')

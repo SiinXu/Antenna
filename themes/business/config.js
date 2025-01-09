@@ -1,8 +1,8 @@
 const CONFIG = {
   name: 'business',
-  title: 'Antenna 触角',
-  description: 'AI 赋能营销，开启内容创作与用户运营新纪元',
-  author: 'Antenna 触角团队',
+  title: 'Antenna 触角 - AI 驱动的营销增长引擎 | 智能内容创作 & 用户运营平台',
+  description: 'Antenna 触角是一款 AI 营销工具，提供智能内容创作、用户运营、营销智库、社交分享和灵感记录等功能，帮助企业和个人提升营销效率，实现业绩增长。',
+  author: 'Incidental AI',
   github: '',
   version: '1.0.0',
   features: {
@@ -34,8 +34,8 @@ const CONFIG = {
   },
   HERO: {
     introducing: "欢迎使用 Antenna 触角",
-    title: "AI 赋能营销，开启内容创作与用户运营新纪元",
-    subTitle: "专为营销人员和内容创作者打造的 AI 智能工具",
+    title: "内容创作耗时费力，灵感枯竭？",
+    subTitle: "Antenna 触角 - 让内容创作更高效，用户运营更智能",
     typewriterWords: [
       {
         text: "营销博客社区",
