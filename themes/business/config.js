@@ -35,22 +35,22 @@ const CONFIG = {
   HERO: {
     introducing: "欢迎使用 Antenna 触角",
     title: "内容创作耗时费力，灵感枯竭？",
-    subTitle: "Antenna 触角 - 让内容创作更高效，用户运营更智能",
+    subTitle: "",
     typewriterWords: [
       {
-        text: "营销博客社区",
+        text: "Antenna",
       },
       {
-        text: "AI 内容创作",
+        text: "触角",
       },
       {
-        text: "智能用户运营",
+        text: "————",
       },
       {
-        text: "社交分享",
+        text: "让内容创作更高效",
       },
       {
-        text: "灵感记录",
+        text: "用户运营更智能",
         className: "text-blue-500 dark:text-blue-500",
       },
     ],

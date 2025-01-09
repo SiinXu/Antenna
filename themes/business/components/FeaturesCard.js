@@ -6,7 +6,7 @@ import { motion, AnimatePresence } from "framer-motion"
 
 let notifications = [
   {
-    name: "营销博客社区",
+    name: "博客社区",
     description: "专属营销智库",
     time: "15m ago",
     icon: "📚",
@@ -131,7 +131,7 @@ const Notification = ({ name, description, icon, color, time, index }) => {
           <div className="flex flex-row items-center whitespace-pre text-lg font-medium dark:text-white">
             <span className="text-sm sm:text-lg">{name}</span>
             <span className="mx-1">·</span>
-            {/* <span className="text-xs text-gray-500 dark:text-gray-400">{time}</span> */}
+            <span className="text-xs text-gray-500 dark:text-gray-400">{time}</span>
           </div>
           <p className="text-sm font-normal text-gray-600 dark:text-white/60">
             {description}
