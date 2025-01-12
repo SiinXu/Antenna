@@ -3,7 +3,7 @@
  *  > 主题设计者 [张洪](https://zhheo.com/)
  *  > 主题开发者 [tangly1024](https://github.com/tangly1024)
  *  1. 开启方式 在blog.config.js 将主题配置为 `HEO`
- *  2. 更多说明参考此[文档](https://docs.tangly1024.com/article/notionnext-heo)
+ *  2. 更多说明参考此[文档](https://docs.tangly1024.com/article/Antenna-heo)
  */
 
 import Comment from '@/components/Comment'
@@ -43,6 +43,7 @@ import SideRight from './components/SideRight'
 import CONFIG from './config'
 import { Style } from './style'
 import AISummary from '@/components/AISummary'
+import { ArticleLock } from './components/ArticleLock'
 
 /**
  * 基础布局 采用上中下布局，移动端使用顶部侧边导航栏
@@ -249,8 +250,30 @@ const LayoutArchive = props => {
 const LayoutSlug = props => {
   const { post, lock, validPassword } = props
   const { locale, fullWidth } = useGlobal()
-
   const [hasCode, setHasCode] = useState(false)
+  const [postLockValid, setPostLockValid] = useState(false)
+  const [articleLockValid, setArticleLockValid] = useState(false)
+
+  // 检查是否所有锁都已解锁
+  const isAllUnlocked = !lock || (postLockValid && articleLockValid)
+
+  // 处理 PostLock 的密码验证
+  const handlePostLockValidation = (password) => {
+    const isValid = validPassword(password)
+    if (isValid) {
+      setPostLockValid(true)
+    }
+    return isValid
+  }
+
+  // 处理 ArticleLock 的密码验证
+  const handleArticleLockValidation = (password) => {
+    const isValid = validPassword(password)
+    if (isValid) {
+      setArticleLockValid(true)
+    }
+    return isValid
+  }
 
   useEffect(() => {
     const hasCode = document.querySelectorAll('[class^="language-"]').length > 0
@@ -293,10 +316,14 @@ const LayoutSlug = props => {
     <>
       <div
         className={`article h-full w-full ${fullWidth ? '' : 'xl:max-w-5xl'} ${hasCode ? 'xl:w-[73.15vw]' : ''}  bg-white dark:bg-[#18171d] dark:border-gray-600 lg:hover:shadow lg:border rounded-2xl lg:px-2 lg:py-4 `}>
-        {/* 文章锁 */}
-        {lock && <PostLock validPassword={validPassword} />}
-
-        {!lock && post && (
+        
+        {/* 文章锁区域 */}
+        {lock ? (
+          <>
+            {!postLockValid && <PostLock validPassword={handlePostLockValidation} />}
+            {postLockValid && !articleLockValid && <ArticleLock validPassword={handleArticleLockValidation} />}
+          </>
+        ) : post && (
           <div className='mx-auto md:w-full md:px-5'>
             {/* 文章主体 */}
             <article

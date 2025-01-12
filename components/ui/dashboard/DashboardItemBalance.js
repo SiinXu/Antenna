@@ -87,7 +87,7 @@ export default function DashboardItemBalance() {
                 selectedCard === index ? 'bg-blue-100' : ''
               }`}
               onClick={() => handleCardSelect(index)}>
-              <h3 className='text-yellow-500 font-bold'>{item.points}</h3>
+              <h3 className='text-blue-500 font-bold'>{item.points}</h3>
               <span>{item.price}</span>
             </div>
           ))}

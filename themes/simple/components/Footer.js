@@ -18,7 +18,7 @@ export default function Footer(props) {
     <footer className='relative w-full bg-black px-6 border-t'>
       <DarkModeButton className='text-center pt-4' />
 
-      <div className='text-yellow-300 container mx-auto max-w-4xl py-6 md:flex flex-wrap md:flex-no-wrap md:justify-between items-center text-sm'>
+      <div className='text-blue-300 container mx-auto max-w-4xl py-6 md:flex flex-wrap md:flex-no-wrap md:justify-between items-center text-sm'>
         <div className='text-center'>
           &copy;{`${copyrightDate}`} {siteConfig('AUTHOR')}. All rights
           reserved.
@@ -37,9 +37,9 @@ export default function Footer(props) {
           <span className='no-underline ml-4'>
             Powered by
             <a
-              href='https://github.com/tangly1024/NotionNext'
+              href='https://github.com/tangly1024/Antenna'
               className=' hover:underline'>
-              NotionNext {siteConfig('VERSION')}
+              Antenna {siteConfig('VERSION')}
             </a>
           </span>
         </div>

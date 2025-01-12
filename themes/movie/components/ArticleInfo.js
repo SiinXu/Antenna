@@ -34,7 +34,7 @@ export const ArticleInfo = props => {
           )}
           {post?.tags?.map(tag => {
             return (
-              <Link href={`/tag/${tag}`} key={tag} className='text-yellow-500 mr-2'>
+              <Link href={`/tag/${tag}`} key={tag} className='text-blue-500 mr-2'>
                 {tag}
               </Link>
             )

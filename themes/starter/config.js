@@ -10,13 +10,14 @@ const CONFIG = {
 
   // 英雄区块导航
   STARTER_HERO_ENABLE: true, // 开启英雄区
-  STARTER_HERO_TITLE_1: '触角 Antenna 让您的营销触角无限延伸', // 英雄区文字
-  STARTER_HERO_TITLE_2: '化繁为简，一键智连全网，覆盖用户完整旅程，让您的营销轻松触达每个角落', // 英雄区文字
+  STARTER_HERO_TITLE_1: '开源且免费的基于 Notion 笔记的网站构建工具', // 英雄区文字
+  STARTER_HERO_TITLE_2: '通过笔记无感知地建站、成倍放大您的价值', // 英雄区文字
   // 英雄区两个按钮，如果TEXT留空则隐藏按钮
-  //STARTER_HERO_BUTTON_1_TEXT: '', // 英雄区按钮
-  //STARTER_HERO_BUTTON_1_URL:  '', // 英雄区按钮
-  STARTER_HERO_BUTTON_2_TEXT: '立即体验', // 英雄区按钮
-  STARTER_HERO_BUTTON_2_URL: 'https://github.com/tangly1024/NotionNext', // 英雄区按钮
+  STARTER_HERO_BUTTON_1_TEXT: '开始体验', // 英雄区按钮
+  STARTER_HERO_BUTTON_1_URL:
+    'https://docs.tangly1024.com/article/vercel-deploy-notion-next', // 英雄区按钮
+  STARTER_HERO_BUTTON_2_TEXT: '在Github上关注', // 英雄区按钮
+  STARTER_HERO_BUTTON_2_URL: 'https://github.com/tangly1024/Antenna', // 英雄区按钮
   STARTER_HERO_BUTTON_2_ICON: '/images/starter/github.svg', // 英雄区按钮2的图标，不需要则留空
 
   // 英雄区配图，如需隐藏，改为空值即可 ''
@@ -32,37 +33,37 @@ const CONFIG = {
 
   // 特性区块
   STARTER_FEATURE_ENABLE: true, // 特性区块开关
-  STARTER_FEATURE_TITLE: ' ', // 特性
-  STARTER_FEATURE_TEXT_1: '从用户旅程出发，全方位覆盖营销场景 ', // 特性
+  STARTER_FEATURE_TITLE: '特性', // 特性
+  STARTER_FEATURE_TEXT_1: 'Antenna的主要特性', // 特性
   STARTER_FEATURE_TEXT_2:
-    '触角 Antenna 伴随用户旅程的每一步，从 认知、兴趣、考虑、购买到忠诚，提供全方位的营销支持： ', // 特性
+    'Antenna的愿景是帮助您简单、无感知地稳定地搭建自己的网站，放大品牌的价值。 ', // 特性
 
-  STARTER_FEATURE_1_TITLE_1: '让品牌无处不在', // 特性1
-  STARTER_FEATURE_1_TEXT_1: '帮您洞察全网信息，实时掌握行业趋势、竞品动态和用户需求，让您始终快人一步。', // 特性1
-  STARTER_FEATURE_1_BUTTON_TEXT: ' ', // 特性1
-  STARTER_FEATURE_1_BUTTON_URL: '', // 特性1
+  STARTER_FEATURE_1_TITLE_1: '免费且开源', // 特性1
+  STARTER_FEATURE_1_TEXT_1: '项目源码在Github上完全开放共享，遵循MIT协议', // 特性1
+  STARTER_FEATURE_1_BUTTON_TEXT: '了解更多', // 特性1
+  STARTER_FEATURE_1_BUTTON_URL: 'https://github.com/tangly1024/Antenna', // 特性1
 
-  STARTER_FEATURE_2_TITLE_1: '让互动更走心', // 特性2
-  STARTER_FEATURE_2_TEXT_1: '提供源源不断的创意灵感和热门话题，让您的内容始终新颖有趣，吸引用户持续关注。', // 特性2
-  STARTER_FEATURE_2_BUTTON_TEXT: '', // 特性2
+  STARTER_FEATURE_2_TITLE_1: '多种主题定制', // 特性2
+  STARTER_FEATURE_2_TEXT_1: '数十种主题,适用于不同场景，总有一款适合你', // 特性2
+  STARTER_FEATURE_2_BUTTON_TEXT: '了解更多', // 特性2
   STARTER_FEATURE_2_BUTTON_URL:
-    '', // 特性2
+    'https://docs.tangly1024.com/article/notion-next-themes', // 特性2
 
-  STARTER_FEATURE_3_TITLE_1: '让决策更轻松', // 特性3
-  STARTER_FEATURE_3_TEXT_1: '智能选品，优质产品介绍内容生成，详细了解每个客户，让营销更精准。', // 特性3
-  STARTER_FEATURE_3_BUTTON_TEXT: ' ', // 特性3
-  STARTER_FEATURE_3_BUTTON_URL: ' ', // 特性3
+  STARTER_FEATURE_3_TITLE_1: '优秀的性能', // 特性3
+  STARTER_FEATURE_3_TEXT_1: '基于NextJS开发，更快的响应速度，更好的SEO', // 特性3
+  STARTER_FEATURE_3_BUTTON_TEXT: '了解更多', // 特性3
+  STARTER_FEATURE_3_BUTTON_URL: 'https://docs.tangly1024.com/article/next-js', // 特性3
 
-  STARTER_FEATURE_4_TITLE_1: '让转化更高效', // 特性4
-  STARTER_FEATURE_4_TEXT_1: '提供智能销售话术和广告优化建议,助您快速提升销售业绩,最大化广告投放的 ROI。', // 特性4
-  STARTER_FEATURE_4_BUTTON_TEXT: ' ', // 特性4
-  STARTER_FEATURE_4_BUTTON_URL: ' ', // 特性4
+  STARTER_FEATURE_4_TITLE_1: '便捷的写作体验', // 特性4
+  STARTER_FEATURE_4_TEXT_1: '只需在Notion笔记中编修，自动同步到网站', // 特性4
+  STARTER_FEATURE_4_BUTTON_TEXT: '了解更多', // 特性4
+  STARTER_FEATURE_4_BUTTON_URL: 'https://docs.tangly1024.com/about', // 特性4
 
   // 首页ABOUT区块
   STARTER_ABOUT_ENABLE: true, // ABOUT区块开关
-  STARTER_ABOUT_TITLE: '你还在等待什么呢？现在开始吧',
+  STARTER_ABOUT_TITLE: '一套轻量实用的建站解决方案',
   STARTER_ABOUT_TEXT:
-    'NotionNext的愿景是帮助非技术人员的小白，最低成本、最快速地搭建自己的网站，帮助您将自己的产品与故事高效地传达给世界。 <br /> <br /> 功能强大的Notion笔记，简单快速的Vercel托管平台，组成一个简单的网站',
+    'Antenna的愿景是帮助非技术人员的小白，最低成本、最快速地搭建自己的网站，帮助您将自己的产品与故事高效地传达给世界。 <br /> <br /> 功能强大的Notion笔记，简单快速的Vercel托管平台，组成一个简单的网站',
   STARTER_ABOUT_BUTTON_TEXT: '了解更多',
   STARTER_ABOUT_BUTTON_URL: 'https://docs.tangly1024.com/about',
   STARTER_ABOUT_IMAGE_1: '/images/starter/about/about-image-01.jpg',
@@ -73,38 +74,38 @@ const CONFIG = {
 
   // 首页价格区块
   STARTER_PRICING_ENABLE: true, // 价格区块开关
-  STARTER_PRICING_TITLE: '定价方案',
-  STARTER_PRICING_TEXT_1: '选择适合您的方案',
+  STARTER_PRICING_TITLE: '价格表',
+  STARTER_PRICING_TEXT_1: '很棒的定价计划',
   STARTER_PRICING_TEXT_2:
-    '我们提供灵活的定价方案，您可以根据自身需求选择最合适的版本。（这里仅演示产品订阅付费功能，请勿下单购买！）',
+    '我们制定了灵活的付费模式，您可以按需选择。（Antenna免费开源，这里仅演示产品订阅付费功能，请勿下单购买！）',
 
   STARTER_PRICING_1_TITLE: '入门版',
-  STARTER_PRICING_1_PRICE: '39.9',
-  STARTER_PRICING_1_PRICE_CURRENCY: '¥',
+  STARTER_PRICING_1_PRICE: '19.9',
+  STARTER_PRICING_1_PRICE_CURRENCY: '$',
   STARTER_PRICING_1_PRICE_PERIOD: '每月',
   STARTER_PRICING_1_HEADER: '功能点',
-  STARTER_PRICING_1_FEATURES: '基础内容生成(限制数量和平台)，基础数据分析', // 英文逗号隔开
+  STARTER_PRICING_1_FEATURES: '所有的主题,免费更新,帮助手册', // 英文逗号隔开
   STARTER_PRICING_1_BUTTON_TEXT: '立即购买',
   STARTER_PRICING_1_BUTTON_URL:
     'https://tangly1024.lemonsqueezy.com/checkout/buy/c1a38a65-362e-44c5-8065-733fee39eb54',
 
   STARTER_PRICING_2_TAG: '推荐',
   STARTER_PRICING_2_TITLE: '基础版',
-  STARTER_PRICING_2_PRICE: '99.9',
-  STARTER_PRICING_2_PRICE_CURRENCY: '¥',
+  STARTER_PRICING_2_PRICE: '39.9',
+  STARTER_PRICING_2_PRICE_CURRENCY: '$',
   STARTER_PRICING_2_PRICE_PERIOD: '每月',
   STARTER_PRICING_2_HEADER: '功能点',
-  STARTER_PRICING_2_FEATURES: '包含免费版所有功能，支持更多平台，高级数据分析，智能选品，用户情绪分析，销售话术优化', // 英文逗号隔开
+  STARTER_PRICING_2_FEATURES: '包含入门版,项目源码,内部社群,技术咨询,SEO优化', // 英文逗号隔开
   STARTER_PRICING_2_BUTTON_TEXT: '立即购买',
   STARTER_PRICING_2_BUTTON_URL:
     'https://tangly1024.lemonsqueezy.com/checkout/buy/590ad70a-c3b7-4caf-94ec-9ca27bde06d4',
 
-  STARTER_PRICING_3_TITLE: '专业版',
-  STARTER_PRICING_3_PRICE: '499.9',
-  STARTER_PRICING_3_PRICE_CURRENCY: '¥',
+  STARTER_PRICING_3_TITLE: '高级版',
+  STARTER_PRICING_3_PRICE: '59.9',
+  STARTER_PRICING_3_PRICE_CURRENCY: '$',
   STARTER_PRICING_3_PRICE_PERIOD: '每月',
   STARTER_PRICING_3_HEADER: '功能点',
-  STARTER_PRICING_3_FEATURES: '包含专业版所有功能，尊享一对一客服支持，定制化功能开发，支持私有化部署', // 英文逗号隔开
+  STARTER_PRICING_3_FEATURES: '包含基础版,功能定制开发', // 英文逗号隔开
   STARTER_PRICING_3_BUTTON_TEXT: '立即购买',
   STARTER_PRICING_3_BUTTON_URL:
     'https://tangly1024.lemonsqueezy.com/checkout/buy/df924d66-09dc-42a4-a632-a6b0c5cc4f28',
@@ -112,39 +113,39 @@ const CONFIG = {
   // 首页用户测评区块
   STARTER_TESTIMONIALS_ENABLE: true, // 测评区块开关
   STARTER_TESTIMONIALS_TITLE: '用户反馈',
-  STARTER_TESTIMONIALS_TEXT_1: '听听用户怎么说',
+  STARTER_TESTIMONIALS_TEXT_1: '我们的用户怎么说',
   STARTER_TESTIMONIALS_TEXT_2:
-    '众多企业和个人选择触角 Antenna 提升营销效率，以下是他们的真实反馈。',
+    '数千位站长选择用Antenna搭建他们的网站,通过帮助手册、交流社群以及技术咨询，大家成功上线了自己的网站',
   STARTER_TESTIMONIALS_STAR_ICON: '/images/starter/testimonials/icon-star.svg', // 评分图标
 
   // 这里不支持CONFIG和环境变量，需要一一修改此处代码。
   STARTER_TESTIMONIALS_ITEMS: [
     {
       STARTER_TESTIMONIALS_ITEM_TEXT:
-        '触角 Antenna 真的太好用了！它的智能选品和 Listing 优化功能帮我节省了大量时间，而且效果非常好，产品销量提升了 30%！ ',
+        '感谢大佬的方法。之前尝试过Super、Potion等国外的第三方平台，实现效果一般，个性化程度远不如这个方法，已经用起来了！ ',
       STARTER_TESTIMONIALS_ITEM_AVATAR:
         'https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F22de3fcb-d90d-4271-bc01-f815f476122b%2F4FE0A0C0-E487-4C74-BF8E-6F01A27461B8-14186-000008094BC289A6.jpg?table=collection&id=a320a2cc-6ebe-4a8d-95cc-ea94e63bced9&width=200',
-      STARTER_TESTIMONIALS_ITEM_NICKNAME: '张先生',
-      STARTER_TESTIMONIALS_ITEM_DESCRIPTION: '某电商公司 CEO',
-      STARTER_TESTIMONIALS_ITEM_URL: ' '
+      STARTER_TESTIMONIALS_ITEM_NICKNAME: 'Ryan_G',
+      STARTER_TESTIMONIALS_ITEM_DESCRIPTION: 'Ryan`Log 站长',
+      STARTER_TESTIMONIALS_ITEM_URL: 'https://blog.gaoran.xyz/'
     },
     {
       STARTER_TESTIMONIALS_ITEM_TEXT:
-        '触角 Antenna 的内容生成功能非常强大，可以根据我的需求生成各种类型的文案，而且质量都很高，大大提升了我的工作效率！',
+        '很喜欢这个主题，本代码小白用三天台风假期搭建出来了，还根据大佬的教程弄了自定义域名，十分感谢，已请喝咖啡~',
       STARTER_TESTIMONIALS_ITEM_AVATAR:
         'https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F0d33d169-f932-41ff-ac6b-88a923c08e02%2F%25E5%25A4%25B4%25E5%2583%258F.jfif?table=collection&id=7787658d-d5c0-4f34-8e32-60c523dfaba3&width=400',
-      STARTER_TESTIMONIALS_ITEM_NICKNAME: '李女士',
-      STARTER_TESTIMONIALS_ITEM_DESCRIPTION: '新媒体运营',
-      STARTER_TESTIMONIALS_ITEM_URL: ' '
+      STARTER_TESTIMONIALS_ITEM_NICKNAME: 'Asenkits',
+      STARTER_TESTIMONIALS_ITEM_DESCRIPTION: '阿森的百宝袋 站长',
+      STARTER_TESTIMONIALS_ITEM_URL: 'https://asenkits.top/'
     },
     {
       STARTER_TESTIMONIALS_ITEM_TEXT:
-        '触角 Antenna 的客服团队非常专业，响应速度很快，帮我解决了很多问题，非常感谢！',
+        '呜呜呜，经过一个下午的努力，终于把博客部署好啦，非常感谢Tangly1024大佬的框架和教程，这是我有生之年用过的最好用的博客框架┭┮﹏┭┮。从今之后，我就可以在自己的博客里bb啦，( •̀ ω •́ )y ',
       STARTER_TESTIMONIALS_ITEM_AVATAR:
         'https://www.notion.so/image/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2F6c096b44-beb9-48ee-8f92-1efdde47f3a3%2F338962f1-d352-49c7-9a1b-746e35a7005c%2Fhf.png?table=block&id=ce5a48a9-d77a-4843-a3d9-a78cd4f794ce&spaceId=6c096b44-beb9-48ee-8f92-1efdde47f3a3&width=100&userId=27074aef-7216-41ed-baef-d9b53addd870&cache=v2',
-      STARTER_TESTIMONIALS_ITEM_NICKNAME: '王先生',
-      STARTER_TESTIMONIALS_ITEM_DESCRIPTION: '创业者',
-      STARTER_TESTIMONIALS_ITEM_URL: ' '
+      STARTER_TESTIMONIALS_ITEM_NICKNAME: 'DWIND',
+      STARTER_TESTIMONIALS_ITEM_DESCRIPTION: '且听风吟 站长',
+      STARTER_TESTIMONIALS_ITEM_URL: 'https://www.dwind.top/'
     },
     {
       STARTER_TESTIMONIALS_ITEM_TEXT:
@@ -180,28 +181,28 @@ const CONFIG = {
   STARTER_FAQ_TEXT_1: '有任何问题吗？请看这里',
   STARTER_FAQ_TEXT_2: '我们收集了常见的用户疑问',
 
-  STARTER_FAQ_1_QUESTION: '触角 Antenna 如何收费？',
+  STARTER_FAQ_1_QUESTION: 'Antenna有帮助文档吗？',
   STARTER_FAQ_1_ANSWER:
-    'NotionNext提供了<a href="https://docs.tangly1024.com/about" className="underline">帮助文档</a>，操作<a href="https://www.bilibili.com/video/BV1fM4y1L7Qi/" className="underline">演示视频</a>，以及<a href="https://docs.tangly1024.com/article/chat-community" className="underline">交流社群</a>来协助您完成网站的搭建部署',
+    'Antenna提供了<a href="https://docs.tangly1024.com/about" className="underline">帮助文档</a>，操作<a href="https://www.bilibili.com/video/BV1fM4y1L7Qi/" className="underline">演示视频</a>，以及<a href="https://docs.tangly1024.com/article/chat-community" className="underline">交流社群</a>来协助您完成网站的搭建部署',
 
   STARTER_FAQ_2_QUESTION: '部署后要如何编写文章？',
   STARTER_FAQ_2_ANSWER:
     '您可以在Notion中之间添加或修改类型为Post的页面，内容将被实时同步在站点中，详情参考<a className="underline" href="https://docs.tangly1024.com/article/start-to-write">《帮助文档》</a>',
 
-  STARTER_FAQ_3_QUESTION: '触角 Antenna 如何收费？',
+  STARTER_FAQ_3_QUESTION: '站点部署失败，更新失败？',
   STARTER_FAQ_3_ANSWER:
-    ' 触角 Antenna 提供免费版、专业版和企业版三种方案，您可以根据自身需求选择合适的版本。具体定价请参考价格区块。',
+    '通常是配置修改错误导致，请检查配置或者重试操作步骤，或者通过Vercel后台的Deployments中找到错误日志，并向网友求助',
 
-  STARTER_FAQ_4_QUESTION: '触角 Antenna 的数据安全如何保障？',
+  STARTER_FAQ_4_QUESTION: '文章没有实时同步？',
   STARTER_FAQ_4_ANSWER:
-    '触角 Antenna 高度重视用户数据安全，采用多种安全措施保护用户数据，包括数据加密、访问控制等，并严格遵守相关法律法规。',
+    '先检查Notion_Page_ID是否正确配置，其次由于博客的每个页面都有独立缓存，刷新网页后即可解决',
 
   // 团队成员区块
   STARTER_TEAM_ENABLE: true, // 团队成员区块开关
   STARTER_TEAM_TITLE: '团队成员',
   STARTER_TEAM_TEXT_1: '我们的开发者团队',
   STARTER_TEAM_TEXT_2:
-    'NotionNext 由众多开源技术爱好者们共同合作完成，感谢每一位<a className="underline" href="https://github.com/tangly1024/NotionNext/graphs/contributors">贡献者</a>',
+    'Antenna 由众多开源技术爱好者们共同合作完成，感谢每一位<a className="underline" href="https://github.com/tangly1024/Antenna/graphs/contributors">贡献者</a>',
 
   // 这里不支持CONFIG和环境变量，需要一一修改此处代码。
   STARTER_TEAM_ITEMS: [
@@ -234,16 +235,16 @@ const CONFIG = {
   STARTER_BLOG_COUNT: 3, // 首页博文区块默认展示前3篇文章
   STARTER_BLOG_TEXT_1: '最近的新闻',
   STARTER_BLOG_TEXT_2:
-    '这里会发布一些关于NotionNext的最新动态，包括新的动向、新的未来计划，以及新功能的特性',
+    '这里会发布一些关于Antenna的最新动态，包括新的动向、新的未来计划，以及新功能的特性',
 
   // 联系模块
   STARTER_CONTACT_ENABLE: true, // 联系模块开关
   STARTER_CONTACT_TITLE: '联系我们',
   STARTER_CONTACT_TEXT: '告诉我们您遇到的问题',
   STARTER_CONTACT_LOCATION_TITLE: '我们的位置',
-  STARTER_CONTACT_LOCATION_TEXT: '中国，上海',
+  STARTER_CONTACT_LOCATION_TEXT: '中国，福建',
   STARTER_CONTACT_EMAIL_TITLE: '我们如何帮助您？',
-  STARTER_CONTACT_EMAIL_TEXT: 'sinxu.xsy@gmail.com',
+  STARTER_CONTACT_EMAIL_TEXT: 'mail@tangly1024.com',
 
   // 嵌入外部表单
   STARTER_CONTACT_MSG_EXTERNAL_URL: 'https://noteforms.com/forms/yfctc7', // 基于NoteForm创建，将留言数据存在Notion中
@@ -319,7 +320,7 @@ const CONFIG = {
         },
         {
           TITLE: '升级指南',
-          URL: 'https://docs.tangly1024.com/article/how-to-update-notionnext'
+          URL: 'https://docs.tangly1024.com/article/how-to-update-Antenna'
         },
         { TITLE: '最新版本', URL: 'https://docs.tangly1024.com/article/latest' }
       ]
@@ -363,8 +364,8 @@ const CONFIG = {
   STARTER_CTA_ENABLE: true,
   STARTER_CTA_TITLE: '你还在等待什么呢？',
   STARTER_CTA_TITLE_2: '现在开始吧',
-  STARTER_CTA_DESCRIOTN:
-    '访问NotionNext的操作文档，我们提供了详细的教程，帮助你即刻搭建站点',
+  STARTER_CTA_DESCRIPTION:
+    '访问Antenna的操作文档，我们提供了详细的教程，帮助你即刻搭建站点',
   STARTER_CTA_BUTTON: true, // 是否显示按钮
   STARTER_CTA_BUTTON_URL:
     'https://docs.tangly1024.com/article/vercel-deploy-notion-next',

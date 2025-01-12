@@ -40,7 +40,7 @@ export default function ArticleFooter(props) {
               <Link
                 href={`/tag/${tag}`}
                 key={tag}
-                className='text-yellow-500 mr-2'>
+                className='text-blue-500 mr-2'>
                 {tag}
               </Link>
             )

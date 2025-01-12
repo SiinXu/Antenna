@@ -28,9 +28,9 @@ const Footer = ({ siteInfo }) => {
       <div className='text-xs font-serif py-1'>
         Powered By{' '}
         <a
-          href='https://github.com/tangly1024/NotionNext'
+          href='https://github.com/tangly1024/Antenna'
           className='underline text-gray-500 dark:text-gray-300'>
-          NotionNext {siteConfig('VERSION')}
+          Antenna {siteConfig('VERSION')}
         </a>
       </div>
 

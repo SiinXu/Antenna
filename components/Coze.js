@@ -11,22 +11,26 @@ export default function Coze() {
     'COZE_SRC_URL',
     'https://lf-cdn.coze.cn/obj/unpkg/flow-platform/chat-app-sdk/1.1.0-beta.0/libs/cn/index.js'
   )
-  const title = siteConfig('COZE_TITLE', 'Antenna')
-  const botId = siteConfig('COZE_BOT_ID','7455993508965449754')
+  const title = siteConfig('COZE_TITLE', 'Coze')
+  const botId = siteConfig('COZE_BOT_ID')
 
   const loadCoze = async () => {
-    await loadExternalResource(cozeSrc)
-    const CozeWebSDK = window?.CozeWebSDK
-    if (CozeWebSDK) {
-      const cozeClient = new CozeWebSDK.WebChatClient({
-        config: {
-          bot_id: botId
-        },
-        componentProps: {
-          title: title
-        }
-      })
-      console.log('coze', cozeClient)
+    try {
+      await loadExternalResource(cozeSrc)
+      const CozeWebSDK = window?.CozeWebSDK
+      if (CozeWebSDK) {
+        const cozeClient = new CozeWebSDK.WebChatClient({
+          config: {
+            bot_id: botId
+          },
+          componentProps: {
+            title: title
+          }
+        })
+        console.log('Coze SDK initialized successfully')
+      }
+    } catch (error) {
+      console.error('Failed to load Coze SDK:', error)
     }
   }
 
@@ -36,5 +40,6 @@ export default function Coze() {
     }
     loadCoze()
   }, [])
+
   return <></>
 }

@@ -1,13 +1,13 @@
 const CONFIG = {
 
   LANDING_HEADER_BUTTON_1_TITLE: 'Github开源',
-  LANDING_HEADER_BUTTON_1_URL: 'https://github.com/tangly1024/NotionNext',
+  LANDING_HEADER_BUTTON_1_URL: 'https://github.com/tangly1024/Antenna',
 
   LANDING_HEADER_BUTTON_2_TITLE: '作者博客',
   LANDING_HEADER_BUTTON_2_URL: 'https://blog.tangly1024.com/',
 
   // 首页大图英雄板块
-  LANDING_HERO_TITLE_1: 'NotionNext',
+  LANDING_HERO_TITLE_1: 'Antenna',
   LANDING_HERO_P_1: '快速搭建独立站、轻松放大品牌价值！',
   LANDING_HERO_BUTTON_1_TEXT: '开始体验',
   LANDING_HERO_BUTTON_1_LINK: 'https://docs.tangly1024.com/article/vercel-deploy-notion-next',
@@ -44,7 +44,7 @@ const CONFIG = {
   LANDING_FEATURES_BLOCK_5_TITLE: '写作表达是核心技能',
   LANDING_FEATURES_BLOCK_5_P: '比起只阅读输入，更重要的是反思和输出',
   LANDING_FEATURES_BLOCK_6_TITLE: '开始写博客吧',
-  LANDING_FEATURES_BLOCK_6_P: 'NotionNext，助您轻松开始写作',
+  LANDING_FEATURES_BLOCK_6_P: 'Antenna，助您轻松开始写作',
 
   // 感言
   LANDING_TESTIMONIALS_HEADER: '已搭建超7000个网站、总浏览量突破100,000,000+',
@@ -61,7 +61,7 @@ const CONFIG = {
   LANDING_POST_REDIRECT_URL: process.env.NEXT_PUBLIC_POST_REDIRECT_URL || 'https://blog.tangly1024.com', // 重定向网站地址
 
   LANDING_PRICING_TITLE: '价格表',
-  LANDING_PRICING_P: 'NotionNext开源免费，此处仅演示订阅付费功能！请勿购买！',
+  LANDING_PRICING_P: 'Antenna开源免费，此处仅演示订阅付费功能！请勿购买！',
 
   LANDING_PRICING_1_TITLE: '个人版',
   LANDING_PRICING_1_PRICE: '免费',
